@@ -14,9 +14,9 @@ export default function Home() {
   return (
     <>
       <div id="inicio"><Bienvenida /></div>
-      <div id="servicio"><Servicio /></div>
-      <div id="vision"><Vision /></div>
       <div id="sobre"><Sobre /></div>
+      <div id="vision"><Vision /></div>
+      <div id="servicio"><Servicio /></div>
       <div id="contacto"><Contacto /></div>
       <div id="como"><Como /></div>
       <div><BtnWSP /></div>

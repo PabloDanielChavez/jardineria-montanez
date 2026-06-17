@@ -1,4 +1,4 @@
-export { BiBriefcase, BiCog, BiHomeAlt2, BiMenu, BiX  } from "react-icons/bi";
+export { BiBriefcase, BiCog, BiHomeAlt2, BiMenu, BiX, BiEnvelope, BiHelpCircle, BiTargetLock, BiUser   } from "react-icons/bi";
 export { FaArrowRight, FaInstagram, FaWhatsapp, FaLinkedin, FaGithubSquare, FaFacebookSquare, FaGithub, FaPlus, FaDribbble,  FaMinus, FaBriefcase, FaEnvelope, FaGlobe, FaLink } from "react-icons/fa";
 export { PiMicrosoftOutlookLogo, PiStack, PiPaintBrushBold, PiPalette, PiPlantFill } from 'react-icons/pi';
 export { AiTwotoneSchedule } from "react-icons/ai";
@@ -12,6 +12,5 @@ export { HiOutlineCodeBracket } from "react-icons/hi2";
 export { FiDatabase, FiExternalLink } from "react-icons/fi";
 export { BsQuestionCircle, BsFillPersonVcardFill } from "react-icons/bs";
 export { GiGardeningShears,  GiTreeGrowth, GiWateringCan } from "react-icons/gi";
-
-
 export { FaArrowDown } from "react-icons/fa";
+

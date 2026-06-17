@@ -17,9 +17,9 @@ const footerContacto = [
 
 const footerMenu = [
     { id:"1", nombre: "Inicio",target: "inicio", icono: <MdLocationOn className={styles.footer_icono}/>},
-    { id:"2", nombre: "Servicios",target: "servicio", icono: <MdEmail className={styles.footer_icono}/>},
+    { id:"2", nombre: "Nosotros",target: "sobre", icono: <MdAccessTime className={styles.footer_icono}/>}, 
     { id:"3", nombre: "Vision",target: "vision", icono: <MdEmail className={styles.footer_icono}/>},
-    { id:"4", nombre: "Nosotros",target: "sobre", icono: <MdAccessTime className={styles.footer_icono}/>}, 
+    { id:"4", nombre: "Servicios",target: "servicio", icono: <MdEmail className={styles.footer_icono}/>},
     { id:"5", nombre: "Contacto",target: "contacto", icono: <MdAccessTime className={styles.footer_icono}/>}, 
     { id:"6", nombre: "¿Como Trabajamos?",target: "como", icono: <MdAccessTime className={styles.footer_icono}/>}, 
 ];

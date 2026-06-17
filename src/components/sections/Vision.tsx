@@ -7,7 +7,7 @@ export default function FraseMision() {
         <section className={styles.mision}>
             <div className={styles.mision_overlay}>
                 <blockquote className={styles.mision_texto}>
-                    Nuestra Misión es <span className={styles.mision_highlight}>rediseñar los espacios urbanos</span> para que puedas conectarte con la Naturaleza y descubrir tu mejor versión.
+                    Nuestra <span className={styles.mision_highlight}>Vision</span> es <span className={styles.mision_highlight}>rediseñar</span> los espacios urbanos para que puedas conectarte con la <span className={styles.mision_highlight}>Naturaleza</span> y descubrir su mejor <span className={styles.mision_highlight}>versión</span>.
                 </blockquote>
             </div>
         </section>

@@ -4,19 +4,19 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { useState, useEffect } from 'react';
 import styles from '@/styles/sections/header.module.scss';
-import { BiBriefcase, BiCog, BiHomeAlt2, BiMenu, FaWhatsapp, MdInfoOutline, PiPlantFill, } from "@/components/utils/Iconos";
+import { BiBriefcase, BiCog, BiEnvelope, BiHelpCircle, BiHomeAlt2, BiMenu, BiTargetLock, BiUser, PiPlantFill, } from "@/components/utils/Iconos";
 import { mensajeWSP, numero } from '../utils/variables';
 
 export default function Header() {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const [isScrolled, setIsScrolled] = useState(false);
     const menu = [
-        { id: 1, titulo: "Inicio", target: "inicio", icono: <BiHomeAlt2 size={20} />},
-        { id: 2, titulo: "Servicio", target: "servicio", icono: <BiBriefcase size={20} />},
-        { id: 3, titulo: "Vision", target: "vision", icono: <BiCog size={20} />},
-        { id: 4, titulo: "Sobre", target: "sobre", icono: <MdInfoOutline size={20} />},
-        { id: 5, titulo: "Contacto", target: "contacto", icono: <MdInfoOutline size={20} />},
-        { id: 6, titulo: "Como", target: "como", icono: <MdInfoOutline size={20} />},
+        { id: 1, titulo: "Inicio", target: "inicio", icono: <BiHomeAlt2 size={20} /> },
+        { id: 2, titulo: "Sobre", target: "sobre", icono: <BiUser size={20} /> }, // O BiInfoCircle
+        { id: 3, titulo: "Visión", target: "vision", icono: <BiTargetLock size={20} /> },
+        { id: 4, titulo: "Servicio", target: "servicio", icono: <BiBriefcase size={20} /> },
+        { id: 5, titulo: "Contacto", target: "contacto", icono: <BiEnvelope size={20} /> },
+        { id: 6, titulo: "Cómo", target: "como", icono: <BiHelpCircle size={20} /> }, // O BiQuestionMark
     ];
     
     const scrollToSection = (targetId: string) => {
