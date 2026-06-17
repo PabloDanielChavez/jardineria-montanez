@@ -1,11 +1,8 @@
 "use client";
 
-import Link from 'next/link';
-import Image from 'next/image';
 import { useState, useEffect } from 'react';
 import styles from '@/styles/sections/header.module.scss';
-import { BiBriefcase, BiCog, BiEnvelope, BiHelpCircle, BiHomeAlt2, BiMenu, BiTargetLock, BiUser, PiPlantFill, } from "@/components/utils/Iconos";
-import { mensajeWSP, numero } from '../utils/variables';
+import { BiBriefcase, BiEnvelope, BiHelpCircle, BiHomeAlt2, BiMenu, BiTargetLock, BiUser, PiPlantFill, } from "@/components/utils/Iconos";
 
 export default function Header() {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -38,6 +35,7 @@ export default function Header() {
 
     const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
     return (
+        
         <header className={`${styles.header} ${isScrolled ? styles.header_scrolled : ''}`}>
             <div className={styles.header_container}>
                 <div className={styles.header_logo_box}>
@@ -59,6 +57,9 @@ export default function Header() {
                         key={menu.id} 
                         className={styles.header_li} 
                         aria-label={`Navegacion ${menu.titulo}`}
+                        style={{
+                            animationDelay: `${0.08}s`
+                        }}
                     >
                         <button 
                             className={`${styles.header_LINK}`}
