@@ -48,7 +48,7 @@ export default function Footer() {
           <h2 className={styles.footer_logo_h2}>Jardineria Montañez</h2>
         </div>
         <div className={styles.footer_col}>
-          <h3 className={styles.footer_h3}>ENLACES</h3>
+          <h3 className={styles.footer_h3}>SECCIONES</h3>
           <ul className={styles.footer_ul}>
             {footerMenu.map((item) => (
               <li key={item.id} className={styles.footer_li}>
@@ -63,7 +63,7 @@ export default function Footer() {
           </ul>
         </div>
         <div className={`${styles.footer_col}`}>
-          <h3 className={styles.footer_h3}>CANALES DE CONTACTO</h3>
+          <h3 className={styles.footer_h3}>CONTACTO</h3>
           <ul className={styles.footer_ul}>
             {footerContacto.map((item) => (
               <li key={item.nombre} className={styles.footer_li}>
