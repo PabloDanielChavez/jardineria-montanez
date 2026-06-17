@@ -1,12 +1,24 @@
 "use client";
+import { useState, useEffect } from 'react';
 
 import Image from "next/image";
 import styles from "@/styles/sections/bienvenida.module.scss";
 import Link from "next/link";
-import { mensaje, numero } from "../utils/variables";
+import { mensajePresupuesto, numero } from "../utils/variables";
 import { GiGardeningShears, MdBuild, PiPlantFill , FaWhatsapp, FaArrowDown} from "@/components/utils/Iconos";
 
 export default function Bienvenida() {
+    
+    const [isMenuOpen, setIsMenuOpen] = useState(false);
+    const [isScrolled, setIsScrolled] = useState(false);
+
+    const scrollToSection = (targetId: string) => {
+        const element = document.getElementById(targetId);
+        if (element) {
+            element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            setIsMenuOpen(false);
+        }
+    };
 
     return (
         <section className={styles.bienvenida}>
@@ -19,8 +31,14 @@ export default function Bienvenida() {
 
                     <div className={styles.bienvenida_header_box_btn}>
                         
-                        <Link href="/" className={styles.bienvenida_header_btn}>Ver Servicios<FaArrowDown className={`${styles.bienvenida_icono_secun}`}/></Link>
-                        <Link href={`https://wa.me/${numero}?text=${mensaje}`} className={`${styles.bienvenida_header_btn} ${styles.bienvenida_header_btn_alt}`}><FaWhatsapp  className={`${styles.bienvenida_icono}`}/> Pedir Presupuesto</Link>
+                        <button 
+                            onClick={() => scrollToSection("servicio")}  
+                            className={styles.bienvenida_header_btn}
+                        >
+                            Ver Servicios
+                            <FaArrowDown className={`${styles.bienvenida_icono_secun}`}/>
+                        </button>
+                        <Link href={`https://wa.me/${numero}?text=${mensajePresupuesto}`} className={`${styles.bienvenida_header_btn} ${styles.bienvenida_header_btn_alt}`}><FaWhatsapp  className={`${styles.bienvenida_icono}`}/> Pedir Presupuesto</Link>
                     </div>
 
                     {/* Puedes agregar aquí el bloque de 500+ Proyectos, etc. */}

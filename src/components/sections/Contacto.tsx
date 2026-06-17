@@ -1,6 +1,7 @@
 "use client";
 import Link from "next/link";
 import styles from "@/styles/sections/contacto.module.scss";
+import { mensajePresupuesto, numero } from "../utils/variables";
 
 export default function Contacto() {
     return (
@@ -9,7 +10,7 @@ export default function Contacto() {
                 <h2 className={styles.contacto_titulo}>
                     ¿Necesitás asesoramiento o un presupuesto para nuestros servicios?
                 </h2>
-                <Link href="/contacto" className={styles.contacto_boton}>
+                <Link href={`https://wa.me/${numero}?text=${mensajePresupuesto}`}  className={styles.contacto_boton}>
                     CONTACTANOS
                 </Link>
             </div>

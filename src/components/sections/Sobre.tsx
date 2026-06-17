@@ -3,6 +3,7 @@
 import Image from "next/image";
 import styles from "@/styles/sections/sobre.module.scss";
 import Link from "next/link";
+import { mensajePresupuesto, numero } from "../utils/variables";
 
 export default function Sobre() {
     return (
@@ -27,7 +28,7 @@ export default function Sobre() {
                         Tenemos Profesionales Certificados en diferentes áreas, Alianzas Internacionales y Garantía sobre nuestros trabajos.
                     </p>
                     
-                    <Link href="/contacto" className={styles.sobre_btn}>
+                    <Link href={`https://wa.me/${numero}?text=${mensajePresupuesto}`} className={styles.sobre_btn}>
                         PRESUPUESTAR AHORA
                     </Link>
                 </div>

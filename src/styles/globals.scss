@@ -24,3 +24,60 @@ main {
     font-weight: 800;
     font-style: normal;
 }
+
+#inicio, 
+#servicio, 
+#vision, 
+#sobre, 
+#contacto, 
+#como {
+    scroll-margin-top: 100px; 
+}
+
+.whatsapp_float {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    z-index: 1000;
+    
+    // Diseño del botón
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    background-color: v.$color-secundary;
+    border-radius: 50%;
+    color: v.$color-white;
+    font-size: 30px;
+    box-shadow: 0 4px 15px rgba(90, 125, 74, 0.4);
+    
+    // Transiciones y animaciones
+    transition: all 0.3s ease;
+    cursor: pointer;
+    border: none;
+
+    &:hover {
+        background-color: v.$color-primary;
+        color: v.$color-dark;
+        transform: scale(1.1) rotate(5deg);
+        box-shadow: 0 6px 20px rgba(90, 125, 74, 0.6);
+    }
+
+    // Animación de pulso sutil para llamar la atención
+    &::after {
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        border-radius: 50%;
+        border: 2px solid v.$color-salvia;
+        animation: pulse 2s infinite;
+    }
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); opacity: 1; }
+    50% { transform: scale(1.3); opacity: 0; }
+    100% { transform: scale(1); opacity: 0; }
+}
