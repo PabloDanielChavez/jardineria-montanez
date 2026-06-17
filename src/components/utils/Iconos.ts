@@ -11,6 +11,6 @@ export { LuMonitorSmartphone } from "react-icons/lu";
 export { HiOutlineCodeBracket } from "react-icons/hi2";
 export { FiDatabase, FiExternalLink } from "react-icons/fi";
 export { BsQuestionCircle, BsFillPersonVcardFill } from "react-icons/bs";
-export { GiGardeningShears,  GiTreeGrowth, GiWateringCan } from "react-icons/gi";
+export { GiGardeningShears,  GiTreeGrowth, GiWateringCan, GiBroom} from "react-icons/gi";
 export { FaArrowDown } from "react-icons/fa";
 

@@ -15,51 +15,75 @@
         z-index: 0;
     }
     &_overlay {
-        background: rgba(0, 0, 0, 0.5); // Un poco más oscuro para mejor lectura
+        background: linear-gradient( 135deg, rgba(13, 15, 12, .85), rgba(13, 15, 12, .65) );
         position: absolute;
         inset: 0;
         z-index: 1;
         display: flex;
         align-items: center;
         justify-content: center;
+        &::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: radial-gradient( circle, transparent 40%, rgba(0,0,0,.5) 100% );
+        }
     }
 
     &_texto {
-    color: v.$color-white;
-    font-size: 1.1rem;
-    font-weight: 300;
-    text-align: center;
-    max-width: 90%;
-    line-height: 1.4;
-    position: relative; // Necesario para posicionar las comillas
-    padding: 0 3rem;    // Espacio para que las comillas no se solapen con el texto
-    @include m.tabletXL {
-        font-size: 2rem;
-    }
+        color: v.$color-white;
+        font-size: 1.1rem;
+        font-weight: 400;
+        letter-spacing: .3px;
+        text-align: center;
+        max-width: 900px;
+        margin: 0 auto;
+        line-height: 1.4;
+        position: relative; // Necesario para posicionar las comillas
+        padding: 0 3rem;    // Espacio para que las comillas no se solapen con el texto
+        @include m.tabletXL {
+            font-size: 2.3rem;
+            line-height: 1.5;
+        }
 
-    &::before,
-    &::after {
-        content: "“";
-        position: absolute;
-        font-size: 5rem; // Tamaño ajustable
-        color: v.$color-primary;
-        opacity: 0.5;    // Un toque sutil para elegancia
-    }
+        &::before,
+        &::after {
+            content: "“";
+            position: absolute;
+            font-size: 7rem;
+            color: rgba(v.$color-primary, .25);
+            font-family: Georgia, serif;
+            font-weight: 700;
+        }
 
-    &::before {
-        top: -1rem;
-        left: 0;
-    }
+        &::before {
+            top: -1rem;
+            left: 0;
+        }
 
-    &::after {
-        content: "”";
-        bottom: -2rem;
-        right: 0;
+        &::after {
+            content: "”";
+            bottom: -2rem;
+            right: 0;
+        }
+        &::selection {
+            background: v.$color-primary-trans;
+        }
     }
-}
 
     &_highlight {
-        font-weight: 800;
         color: v.$color-primary;
+        position: relative;
+        font-weight: 700;
+        &::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: 2px;
+            width: 100%;
+            height: 4px;
+            background: rgba(v.$color-primary,.2);
+            z-index: -1;
+        }
     }
 }
