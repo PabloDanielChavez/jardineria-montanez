@@ -18,3 +18,8 @@ export const mensajeEmail = encodeURIComponent(
     "Hola Mauro, contacto desde tu sitio web.\n\n" +
     "Me pongo en contacto con ustedes porque estoy interesado en contratar sus servicios de paisajismo y mantenimiento. Quedo a la espera de su respuesta para avanzar."
 );
+
+export const mensajeHorarios = encodeURIComponent(
+    "Hola Mauro, contacto desde tu sitio web.\n\n" +
+    "Me pongo en contacto con ustedes para conocer sus horarios."
+);

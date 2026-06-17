@@ -4,14 +4,14 @@ import { PiPlantFill } from "react-icons/pi";
 import { MdLocationOn, MdPhone, MdEmail, MdAccessTime } from "react-icons/md";
 import { FaInstagram, FaWhatsapp } from "react-icons/fa";
 import styles from "@/styles/sections/footer.module.scss";
-import { mensajeEmail, mensajeWSP, numero } from "../utils/variables";
+import { mensajeEmail, mensajeHorarios, mensajeWSP, numero } from "../utils/variables";
 
 
 const footerContacto = [
     { id:"1", nombre: " San Esteban, Cañuelas, Buenos Aires.", icono: <MdLocationOn className={styles.footer_icono}/> , url:"https://maps.app.goo.gl/F85DGScrQwF3ub8F8"},
-    { id:"2", nombre: " +54 9 11 5473-5403", icono: <MdPhone className={styles.footer_icono}/> , url:`https://wa.me/${numero}?text=${mensajeWSP}`},
+    { id:"2", nombre: " +54 9 2226 60-7508", icono: <MdPhone className={styles.footer_icono}/> , url:`https://wa.me/${numero}?text=${mensajeWSP}`},
     { id:"3", nombre: " jardineria@gmail.com", icono: <MdEmail className={styles.footer_icono}/> , url:`mailto:jardineria@gmail.com?subject=${mensajeEmail}`},
-    { id:"4", nombre: " Lu. a Vi. 9 a 19hs", icono: <MdAccessTime className={styles.footer_icono}/>, url:`https://wa.me/${numero}?text=${mensajeWSP}`}, 
+    { id:"4", nombre: " Lu. a Vi. 9 a 19hs", icono: <MdAccessTime className={styles.footer_icono}/>, url:`https://wa.me/${numero}?text=${mensajeHorarios}`}, 
 ];
 
 
