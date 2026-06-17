@@ -45,10 +45,10 @@
     grid-template-columns: 1fr; 
     gap: 1.4rem .8rem;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-    background-color: v.$color-primary-trans-int; 
+    background-color: v.$color-crema; 
     backdrop-filter: blur(12px);
     border-radius: 16px;
-    border: .2rem solid v.$color-primary;
+    border: 2px solid v.$color-primary-trans;
     margin: 0 auto;
     align-items: start;
     @include m.telefono {

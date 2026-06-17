@@ -13,7 +13,7 @@ export default function ComoTrabajamos() {
     return (
         <section className={styles.comotrabajamos}>
             <div className={styles.comotrabajamos_container}>
-                <h2 className={styles.comotrabajamos_titulo}>CÓMO TRABAJAMOS</h2>
+                <h2 className={styles.comotrabajamos_titulo}>¿CÓMO TRABAJAMOS?</h2>
                 <p className={styles.comotrabajamos_subtitulo}>Un proceso simple y profesional</p>
                 
                 <div className={styles.comotrabajamos_pasos}>

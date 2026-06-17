@@ -18,8 +18,8 @@ export default function Home() {
       <Vision />
       <Sobre />
       {/* <Galeria /> */}
-      <Como />
       <Contacto />
+      <Como />
     </>
   );
 }

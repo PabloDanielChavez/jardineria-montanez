@@ -51,11 +51,13 @@ export default function Header() {
                         >
                             <Link 
                                 href={menu.target} 
-                                className={`${styles.header_LINK} ${styles.header_li}`}
+                                className={`${styles.header_LINK}`}
                                 prefetch={false}
                             >
                                 {menu.icono}
-                                <span className={styles.header_spanNav}>{menu.titulo}</span>
+                                <span className={`${styles.header_spanNav} ${isScrolled ? styles.header_scrolled_text : ''}`}>
+                                    {menu.titulo}
+                                </span>
                             </Link>
                         </li>
                         ))}

@@ -50,6 +50,9 @@
 
     &_img {
         object-fit: cover;
+        border-radius: 16px;
+        border: 2px solid v.$color-primary-trans;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
     }
 
     &_contenido {
