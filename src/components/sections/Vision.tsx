@@ -11,7 +11,7 @@ export default function FraseMision() {
                 alt="Naturaleza y espacio urbano" 
                 fill
                 className={styles.mision_bg}
-                quality={60} 
+                quality={75} 
                 priority={false}
             />
             <div className={styles.mision_overlay}>

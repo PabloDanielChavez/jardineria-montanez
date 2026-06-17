@@ -9,9 +9,38 @@
     justify-content: flex-start; // Alineamos a la izquierda como en la foto
     padding-left: 10%;
     overflow: hidden;
-        background: 
-            radial-gradient(circle at 20% 50%, rgba(166, 144, 102, 0.25), transparent 50%), 
-            linear-gradient(to right, rgba(13, 15, 12, 0.95), rgba(13, 15, 12, 0.6));
+    background: 
+        radial-gradient(circle at 20% 50%, rgba(166, 144, 102, 0.25), transparent 50%), 
+        linear-gradient(to right, rgba(13, 15, 12, 0.95), rgba(13, 15, 12, 0.6));
+    &::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background:
+            radial-gradient(
+                circle at 20% 50%,
+                rgba(v.$color-oro-mate,.3),
+                transparent 40%
+            );
+        pointer-events: none;
+        z-index: 0;
+    }
+    &::after {
+        content: "";
+
+        position: absolute;
+        inset: 0;
+
+        background-image:
+            radial-gradient(
+                rgba(255,255,255,.15) 1px,
+                transparent 1px
+            );
+
+        background-size: 120px 120px;
+        animation: particlesMove 2s linear infinite;
+        pointer-events: none;
+    }
 
     & .backgroundImage {
         object-fit: cover;
@@ -26,17 +55,25 @@
 
     &_layout {
         position: relative;
-        z-index: 1;
+        z-index: 2;
         width: 100%;
-        max-width: 600px;
+        max-width: 700px;
         color: v.$color-white;
+    }
+    &_header_h1_titulo,
+    &_header_h1_resaltado,
+    &_header_p_descripcion,
+    &_header_box_btn {
+        opacity: 0;
     }
     &_header {
         &_box_informacion {
-            text-align: left;
-            background: transparent;
-            backdrop-filter: none;
-            border: none;
+            background: rgba(255,255,255,.04);
+            backdrop-filter: blur(8px);
+            border: 1px solid rgba(255,255,255,.08);
+            padding: 2rem;
+            border-radius: 30px;
+            animation: fadeUp 1s ease forwards;
         }
 
         &_span_tag {
@@ -48,31 +85,78 @@
             font-size: 0.8rem;
             margin-bottom: 20px;
             border-radius: 6px;
+            animation: fadeUp .6s ease forwards, pulseTag 3s infinite;
         }
 
         &_h1 {
             &_titulo {
-                font-size: 4.5rem;
+                font-size: 2.5rem;
+                @include m.telefonoXL {
+                    font-size: 4.5rem;
+                }
                 line-height: 1;
                 margin-bottom: 10px;
                 color: #fdfdfd;
                 margin-top: 10px;
+                animation: fadeUp .8s ease .15s forwards;
             }
             &_resaltado {
-                font-size: 4.5rem;
+                position: relative;
+                background: linear-gradient(
+                    135deg,
+                    v.$color-primary,
+                    v.$color-secundary,
+                    #d6ffb8
+                );
+                background-size: 200% 200%;
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+                animation: gradientMove 8s ease infinite;
+                font-size: 2.5rem;
+                @include m.telefonoXL {
+                    font-size: 4.5rem;
+                }
                 line-height: 1;
                 color: v.$color-secundary;
                 margin-bottom: 10px;
                 font-weight: 900;
+                animation: fadeUp .8s ease .3s forwards;
+                position: relative;
+                &::after {
+                    content: "";
+                    position: absolute;
+                    left: 50%;
+                    top: 50%;
+                    width: 250px;
+                    height: 120px;
+                    transform: translate(-50%, -50%);
+                    background: linear-gradient(
+                        135deg,
+                        v.$color-primary,
+                        v.$color-secundary,
+                        #d6ffb8
+                    );
+                    filter: blur(60px);
+                    z-index: -1;
+                    animation: glowPulse 5s infinite ease-in-out;
+                    -webkit-background-clip: text;
+                    -webkit-text-fill-color: transparent;
+                    background-size: 200% 200%;
+                    animation: glowPulse 5s ease-in-out infinite;
+                }
             }
         }
         &_p{
             &_descripcion {
-                font-size: 1.2rem;
+                font-size: .9rem;
+                @include m.telefonoXL {
+                    font-size: 1.2rem;
+                }
                 color: v.$color-light-gray;
                 line-height: 1.6;
                 margin-bottom: 30px;
                 font-weight: 500;
+                animation: fadeUp .8s ease .45s forwards;
             }
             &_resaltado {
                 font-size: 1.3rem;
@@ -87,6 +171,7 @@
             display: flex;
             justify-content: center;
             gap: 15px;
+            animation: fadeUp .8s ease .6s forwards;
 
         }
         &_btn {
@@ -100,19 +185,45 @@
             text-decoration: none;
             padding: 12px 28px;
             border-radius: 50px;
-            font-size: 1.2rem;
+            font-size: .8rem;
+            @include m.telefonoXL {
+                font-size: 1.2rem;
+            }
             font-weight: 700;
             transition: all 0.3s ease;
             border: 1px solid rgba(255, 255, 255, 0.3);
             box-shadow: 0 0 20px rgba(v.$color-secundary, 0.4);
             cursor: pointer;
+            overflow: hidden;
+            position: relative;
+
+            &::before {
+                content: "";
+                position: absolute;
+                top: 0;
+                left: -120%;
+                width: 60%;
+                height: 100%;
+                background:
+                    linear-gradient(
+                        90deg,
+                        transparent,
+                        rgba(255,255,255,.4),
+                        transparent
+                    );
+                transition: .8s;
+            }
+            &:hover::before {
+                left: 150%;
+            }
+
             
             &:hover { 
                 background: v.$color-white;
-                box-shadow: 0 0 30px rgba(v.$color-white, 0.6);
+                box-shadow: 0 15px 40px rgba(v.$color-secundary,.35);
                 color: v.$color-dark;
                 border-color: v.$color-white;
-                transform: translateY(-2px);
+                transform:translateY(-4px) scale(1.02);
             }
 
             &_alt {
@@ -228,5 +339,119 @@
     .bienvenida_header_btn {
         animation: none !important;
         transition: none !important;
+    }
+}
+
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes glowPulse {
+    0%,100% {
+        opacity: .3;
+        scale: 1;
+    }
+
+    50% {
+        opacity: .7;
+        scale: 1.15;
+    }
+}
+
+@keyframes ambientMove {
+    from {
+        transform: translateX(-80px);
+    }
+
+    to {
+        transform: translateX(80px);
+    }
+}
+
+@keyframes particlesMove {
+    from {
+        transform: translateY(0);
+    }
+
+    to {
+        transform: translateY(-120px);
+    }
+}
+
+@keyframes floatingContent {
+    0%,100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+@keyframes gradientMove {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.scrollIndicator {
+    position: absolute;
+    bottom: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 30px;
+    height: 50px;
+    border: 2px solid rgba(255,255,255,.5);
+    border-radius: 20px;
+    span {
+        display: block;
+        width: 6px;
+        height: 6px;
+        background: white;
+        border-radius: 50%;
+        margin: 8px auto;
+        animation: scrollDown 2s infinite;
+    }
+}
+
+@keyframes scrollDown {
+    0% {
+        transform: translateY(0);
+        opacity: 0;
+    }
+
+    30% {
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateY(20px);
+        opacity: 0;
+    }
+}
+
+@keyframes pulseTag {
+    0%,100% {
+        box-shadow: 0 0 0 rgba(v.$color-secundary,.0);
+    }
+
+    50% {
+        box-shadow: 0 0 20px rgba(v.$color-secundary,.4);
     }
 }

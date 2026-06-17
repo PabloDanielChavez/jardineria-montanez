@@ -49,6 +49,9 @@ export default function Bienvenida() {
                     {/* Puedes agregar aquí el bloque de 500+ Proyectos, etc. */}
                 </div>
             </div>
+            <div className={styles.scrollIndicator}>
+                <span></span>
+            </div>
         </section>
     );
 }
