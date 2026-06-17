@@ -22,7 +22,9 @@ export default function ComoTrabajamos() {
                             <div className={styles.comotrabajamos_wrapper}>
                                 <div className={styles.comotrabajamos_numero}>{paso.id}</div>
                                 <div className={styles.comotrabajamos_icono}>
-                                    {paso.icono}
+                                    <div className={styles.comotrabajamos_wrapper}> 
+                                        {paso.icono}
+                                    </div>
                                 </div>
                             </div>
                             <h3 className={styles.comotrabajamos_heading}>{paso.titulo}</h3>

@@ -3,7 +3,7 @@
 
 .comotrabajamos {
   padding: 5rem 2rem;
-  background: v.$color-white;
+  background: linear-gradient( 180deg, v.$color-crema, white );
   text-align: center;
 
   &_titulo { 
@@ -34,23 +34,25 @@
   }
 
   &_contenedorBG {
-    background-color: v.$color-primary; 
-    padding: .2rem .2rem;
-    border-radius: 16px;
+    max-width: 1400px;
+    margin: 0 auto;
   }
 
   &_pasos {
-    padding: 1.8rem 1.2rem;
     display: grid;
+    background: white;
+    border: 1px solid rgba(0,0,0,.05);
+    border-radius: 24px;
+    box-shadow: 0 20px 50px rgba(0,0,0,.06);
+    padding: 3rem 2rem;
     grid-template-columns: 1fr; 
     gap: 1.4rem .8rem;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
     background-color: v.$color-crema; 
     backdrop-filter: blur(12px);
-    border-radius: 16px;
-    border: 2px solid v.$color-primary-trans;
     margin: 0 auto;
     align-items: start;
+
+
     @include m.telefono {
       grid-template-columns: repeat(2, 1fr);
     }
@@ -72,18 +74,14 @@
     gap: .2rem;
     position: relative;
 
-    &:not(:last-child)::after {
-        content: "→";
-        position: absolute;
-        top: 30%;
-        right: -10px;
-        font-size: 2rem;
-        color: v.$color-secundary;
-        opacity: 0.7;
-        @media (max-width: 1350px) {
-            display: none;
-        }
-      }
+    &::after {
+      content: "";
+      width: 70px;
+      height: 3px;
+      border-radius: 999px;
+      background: v.$color-primary;
+      margin-bottom: 1rem;
+    }
   }
 
   &_wrapper {
@@ -110,19 +108,27 @@
       border: 4px solid v.$color-primary;
       z-index: 2;
   }
+  &_wrapper {
+    width: 90px;
+    height: 90px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 24px;
+    background:rgba(v.$color-primary,.08);
+  }
 
   &_icono {
-      display: block; 
-      color: v.$color-primary;
-      font-size: 3rem;
-      margin-left: 10px;
+    font-size: 2.5rem;
+    color: v.$color-bosque;
+    margin: 0;
   }
 
   &_heading { 
-      font-size: 1.1rem; 
-      color: #1a202c;
-      font-weight: 700;
-      margin: 0;
+    font-weight: 700;
+    font-size: 1.15rem;
+    color: v.$color-dark;
+    margin-top: .8rem;
   }
 
   &_desc {

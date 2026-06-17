@@ -2,9 +2,21 @@
 @use '../base/mixins.module.scss' as m;
 
 .footer {
-    background: #333333;
+    background: linear-gradient( 180deg, #1d2419, #11150f );
     color: v.$color-white;
     padding: 4rem 2rem 2rem 2rem;
+
+    position: relative;
+    &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 150px;
+        height: 2px;
+        background: linear-gradient(  90deg, transparent, v.$color-primary, transparent );
+    }
 
     &_contenedor {
         max-width: 1200px;
@@ -32,7 +44,7 @@
     }
 
     &_logo_icono {
-        font-size: 6rem;
+        filter: drop-shadow( 0 0 15px rgba(v.$color-primary,.25) );
         color: v.$color-primary;
     }
 
@@ -61,10 +73,10 @@
         }
     }
     &_h3 {
-        font-size: 1.3rem;
         font-weight: 700;
-        text-transform: uppercase;
-        letter-spacing: 1px;
+        text-transform: none;
+        letter-spacing: .3px;
+        font-size: 1.2rem;
         margin-bottom: 0.1rem;
         color: v.$color-white;
     }
@@ -96,13 +108,14 @@
         gap: 0.3rem;
         color: #bbbbbb;
         text-decoration: none;
-        transition: color 0.3s ease;
+        transition: color .25s ease, transform .25s ease;
         justify-content: center;
         @include m.tabletXL {
             justify-content: start;
         }
         &:hover { 
             color: v.$color-white; 
+            transform: translateX(4px);
         }
     }
 
@@ -110,6 +123,7 @@
         display: flex;
         align-items: center;
         gap: 0.8rem;
+        padding: .2rem 0;
         color: #bbbbbb;
         font-size: 0.95rem;
 
@@ -119,28 +133,34 @@
     &_icono {
         font-size: 1.2rem;
         color: v.$color-primary;
+        min-width: 20px;
     }
 
     &_social {
         display: flex;
         gap: 1.5rem;
-        margin-top: 1rem;
         font-size: 2rem;
     }
 
     &_RED {
-        color: v.$color-white;
-        transition: transform .3s ease-in-out;
+        width: 48px;
+        height: 48px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        background: rgba(255,255,255,.04); 
+        transition: transform .3s ease, background .3s ease;
         &:hover {
-            color: v.$color-primary;
-            transform: scale(1.1);
+            background: rgba(v.$color-primary,.15);
+            transform: translateY(-3px);
         }
     }
 
     &_legal {
         margin-top: 2rem;
-        padding-top: 1rem;
-        border-top: 1px solid v.$color-primary-trans;
+        padding-top: 2rem;
+        border-top: 1px solid rgba(255,255,255,.08);
         text-align: center;
         font-size: 0.85rem;
         color: v.$color-white-trans;
