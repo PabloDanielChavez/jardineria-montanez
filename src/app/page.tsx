@@ -1,14 +1,15 @@
+"use client";
 import dynamic from 'next/dynamic';
+import Loading from '@/app/loading'; 
 
 import Bienvenida from '@/components/sections/Bienvenida';
 import BtnWSP from '@/components/sub_components/btnWSP';
 
-
-const Servicio = dynamic(() => import('@/components/sections/Servicio'), { loading: () => <p>Cargando...</p>, ssr: true });
-const Vision = dynamic(() => import('@/components/sections/Vision'), { loading: () => <p>Cargando...</p>, ssr: true });
-const Sobre = dynamic(() => import('@/components/sections/Sobre'), { loading: () => <p>Cargando...</p>, ssr: true });
-const Como = dynamic(() => import('@/components/sections/ComoTrabajamos'));
-const Contacto = dynamic(() => import('@/components/sections/Contacto'), { loading: () => <p>Cargando...</p>, ssr: true, });
+const Servicio = dynamic(() => import('@/components/sections/Servicio'), { loading: () => <Loading />, ssr: true });
+const Vision = dynamic(() => import('@/components/sections/Vision'), { loading: () => <Loading />, ssr: true });
+const Sobre = dynamic(() => import('@/components/sections/Sobre'), { loading: () => <Loading />, ssr: true });
+const Contacto = dynamic(() => import('@/components/sections/Contacto'), { loading: () => <Loading />, ssr: true });
+const Como = dynamic(() => import('@/components/sections/ComoTrabajamos'), { loading: () => <Loading /> });
 
 export default function Home() {
   return (
