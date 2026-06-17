@@ -48,11 +48,8 @@
         box-shadow: 0 15px 35px rgba(0,0,0,0.1);
     }
 
-    &_img {
-        object-fit: cover;
-        border-radius: 16px;
-        border: 2px solid v.$color-primary-trans;
-        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    .sobre_img {
+        object-fit: cover; 
     }
 
     &_contenido {

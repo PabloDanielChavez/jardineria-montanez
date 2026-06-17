@@ -2,6 +2,7 @@
 
 import styles from "@/styles/sections/servicios.module.scss";
 import { GiGardeningShears, GiTreeGrowth, GiWateringCan, MdCleaningServices, MdPool } from "@/components/utils/Iconos";
+import Image from "next/image";
 
 
 export default function Servicios() {
@@ -20,18 +21,27 @@ export default function Servicios() {
             </div>
             <div className={styles.servicios_layout}>
                 <div className={styles.servicios_container_principal}>
-                    {servicios.map((item, index) => (
-                        <div key={index} className={styles.servicios_item} style={{ backgroundImage: `url(${item.img})` }}>
-                          <div className={styles.servicios_overlay}>
-                              <div className={styles.servicios_icono_box}>{item.icono}</div>
-                              <div className={styles.servicios_contenido}>
-                                  <h3 className={styles.servicios_heading}>{item.nombre}</h3>
-                              </div>
-                          </div>
+                {servicios.map((item, index) => (
+                    <div key={index} className={styles.servicios_item}>
+                    <Image 
+                        src={item.img} 
+                        alt={item.nombre}
+                        fill
+                        sizes="(max-width: 768px) 100vw, 300px"
+                        className={styles.servicios_imagen}
+                        loading="lazy"
+                        quality={75}
+                    />
+                    <div className={styles.servicios_overlay}>
+                        <div className={styles.servicios_icono_box}>{item.icono}</div>
+                        <div className={styles.servicios_contenido}>
+                        <h3 className={styles.servicios_heading}>{item.nombre}</h3>
                         </div>
-                    ))}
+                    </div>
+                    </div>
+                ))}
                 </div>
             </div>
         </section>
-    );
+  );
 }

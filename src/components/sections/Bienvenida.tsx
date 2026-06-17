@@ -22,6 +22,14 @@ export default function Bienvenida() {
 
     return (
         <section className={styles.bienvenida}>
+            <Image
+                src="/img/jardinero.webp"
+                alt="Jardinero profesional"
+                fill
+                priority
+                className={styles.backgroundImage}
+                sizes="100vw"
+            />
             <div className={styles.bienvenida_layout}>
                 <div className={styles.bienvenida_header_box_informacion}>
                     <span className={styles.bienvenida_header_span_tag}>Buenos Aires</span>

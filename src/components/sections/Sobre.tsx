@@ -13,11 +13,13 @@ export default function Sobre() {
             <div className={styles.sobre_layout}>
                 <div className={styles.sobre_imgBox}>
                     <Image 
-                        src="/img/jardinero.webp" // Asegúrate de tener esta ruta
+                        src="/img/jardinero.webp"
                         alt="Equipo de Jardinería Montañez trabajando"
                         fill
                         className={styles.sobre_img}
                         sizes="(max-width: 768px) 100vw, 50vw"
+                        quality={75}
+                        loading="lazy"
                     />
                 </div>
                 

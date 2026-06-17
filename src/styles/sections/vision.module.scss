@@ -4,20 +4,21 @@
 .mision {
     width: 100%;
     min-height: 40vh;
-    background-image: url('/img/fondo_vision.webp'); // Asegúrate de tener esta imagen
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
+    position: relative;
+    overflow: hidden;
     display: flex;
     align-items: center;
     justify-content: center;
-    position: relative;
     padding: 40px 20px;
-
+    &_bg {
+        object-fit: cover;
+        z-index: 0;
+    }
     &_overlay {
-        background: rgba(0, 0, 0, 0.4); // Capa oscura para contraste
+        background: rgba(0, 0, 0, 0.5); // Un poco más oscuro para mejor lectura
         position: absolute;
         inset: 0;
+        z-index: 1;
         display: flex;
         align-items: center;
         justify-content: center;

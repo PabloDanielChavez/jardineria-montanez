@@ -103,6 +103,11 @@
         }
     }
 
+    &_imagen {
+        object-fit: cover;
+        z-index: 0;
+    }
+
         // Aquí escondemos el contenido
     &_overlay {
         position: relative;
