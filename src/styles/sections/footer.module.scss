@@ -1,0 +1,136 @@
+@use '../base/variables.module.scss' as v;
+@use '../base/mixins.module.scss' as m;
+
+.footer {
+    background: #333333;
+    color: v.$color-white;
+    padding: 4rem 2rem 2rem 2rem;
+
+    &_contenedor {
+        max-width: 1200px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 3rem;
+
+        @include m.tablet {
+        grid-template-columns: 1fr 1fr;
+        }
+
+        @include m.tabletXL {
+        grid-template-columns: 1fr 1fr 1fr;
+        }
+    }
+
+    &_logo {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: .2rem;
+        margin-bottom: 1.5rem;
+        justify-content: flex-start;
+    }
+
+    &_logo_icono {
+        font-size: 6rem;
+        color: v.$color-primary;
+    }
+
+    &_logo_h2 {
+        font-size: 1.5rem;
+        font-weight: 800;
+        margin: 0;
+    }
+
+    &_col {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+        @include m.tabletXL {
+            align-items: flex-start;
+        }
+    }
+
+    &_GRIDCOL {
+        @include m.tablet {
+            grid-column: 1 / -1;
+        }
+        @include m.tabletXL {
+            grid-column: auto;
+        }
+    }
+    &_h3 {
+        font-size: 1.3rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        margin-bottom: 0.1rem;
+        color: v.$color-white;
+    }
+
+    &_ul {
+        list-style: none;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        gap: 0.6rem;
+    }
+
+    &_LINK {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 0.3rem;
+        color: #bbbbbb;
+        text-decoration: none;
+        transition: color 0.3s ease;
+        justify-content: center;
+        @include m.tabletXL {
+            justify-content: start;
+        }
+        &:hover { 
+            color: v.$color-white; 
+        }
+    }
+
+    &_contact_item {
+        display: flex;
+        align-items: center;
+        gap: 0.8rem;
+        color: #bbbbbb;
+        font-size: 0.95rem;
+
+        a { color: #bbbbbb; text-decoration: none; }
+    }
+
+    &_icono {
+        font-size: 1.2rem;
+        color: v.$color-primary;
+    }
+
+    &_social {
+        display: flex;
+        gap: 1.5rem;
+        margin-top: 1rem;
+        font-size: 2rem;
+    }
+
+    &_RED {
+        color: v.$color-white;
+        transition: transform .3s ease-in-out;
+        &:hover {
+            color: v.$color-primary;
+            transform: scale(1.1);
+        }
+    }
+
+    &_legal {
+        margin-top: 2rem;
+        padding-top: 1rem;
+        border-top: 1px solid v.$color-primary-trans;
+        text-align: center;
+        font-size: 0.85rem;
+        color: v.$color-white-trans;
+    }
+}

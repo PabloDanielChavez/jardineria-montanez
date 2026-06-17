@@ -1,0 +1,155 @@
+@use '../base/variables.module.scss' as v;
+@use '../base/mixins.module.scss' as m;
+
+.servicios {
+    padding:1rem 2rem 5rem 2rem;
+    background: v.$color-white;
+
+    &_layout {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 24px;
+        margin: 0 auto;
+    }
+
+    &_presentacion {
+        text-align: center;
+        margin: 4rem 0; // Espacio entre el título y la grilla de servicios
+        padding: 0 1rem;
+    }
+
+    &_titulo {
+        font-size: 2.5rem;
+        font-weight: 800;
+        color: #1a202c;
+        letter-spacing: -0.025em;
+        margin: 0 0 1rem 0;
+        &::after {
+            content: "";
+            display: block;
+            width: 60px;
+            height: 4px;
+            background: v.$color-secundary;
+            margin: 1rem auto 0;
+            border-radius: 2px;
+        }
+    }
+
+    &_subtitulo {
+        font-size: 1.4rem;
+        color: v.$color-text;
+        font-weight: 400;
+        max-width: 600px;
+        margin: 0 auto 4rem auto;
+    }
+
+    &_container_principal {
+        display: flex;
+        align-items: stretch;
+        justify-content: center;
+        flex-wrap: wrap;       
+        gap: 30px;
+        width: 100%;
+        
+        @include m.tabletXL {
+        flex-direction: row;
+        flex-wrap: nowrap;
+        }
+    }
+
+    &_item {
+
+        &:hover {
+            transform: translateY(-12px);
+            box-shadow: 0 20px 30px rgba(0,0,0,0.1);
+            border-color: v.$color-secundary;
+        }
+    }
+
+    &_item {
+        position: relative;
+        width: 300px;
+        height: 200px;
+        padding: 2.5rem 1.5rem;
+        background-size: cover;
+        background-position: center;
+        text-align: center;
+        border-radius: 16px;
+        border: 3px solid white;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        overflow: hidden;
+        cursor: pointer;
+        transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+
+        // Overlay oscuro inicial para que la imagen no distraiga
+        &::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.2);
+            transition: background 0.4s ease;
+        }
+
+        &:hover {
+            &::after { 
+                background: v.$color-light-gray-trans-int;
+                backdrop-filter: blur(12px); 
+                border-color: white;
+            } 
+            
+            .servicios_overlay {
+                opacity: 1; // Aparece el texto
+            }
+        }
+    }
+
+        // Aquí escondemos el contenido
+    &_overlay {
+        position: relative;
+        z-index: 1;
+        opacity: 0; // Oculto al inicio
+        transition: opacity 0.4s ease;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 1rem;
+        height: 100%;
+    }
+
+    &_contenido {
+        width: 100%; 
+    }
+    
+    &_heading {
+        background-color: v.$color-white;
+        color: v.$color-dark;
+        font-size: 1rem;
+        border-radius: 12px;
+        padding: .2rem .3rem;
+        width: fit-content;
+        margin: 0 auto;
+        font-weight: 700;
+        border: 3px solid v.$color-white-trans-int;
+
+        box-shadow: 
+            inset 0 1px 2px rgba(255, 255, 255, 0.5),
+            0 4px 6px rgba(0, 0, 0, 0.05);
+        text-shadow: 0 1px 0 rgba(255, 255, 255, 0.3);
+    }
+    
+    &_texto {
+        font-size: 0.95rem;
+        color: v.$color-text;
+        font-weight: 600;
+        line-height: 1.8;
+    }
+    
+    &_icono {
+        color: v.$color-white;
+        background: v.$color-secundary;
+        padding: 12px;
+        border-radius: 50%;
+        font-size: 3rem;
+    }
+}

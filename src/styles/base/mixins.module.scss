@@ -1,0 +1,99 @@
+@use 'variables.module' as v;
+
+@mixin telefono {
+    @media (min-width: v.$telefono) {
+        @content;
+    }
+}
+
+@mixin telefonoXL {
+    @media (min-width: v.$telefonoXL) {
+        @content;
+    }
+}
+
+@mixin telefonoXXL {
+    @media (min-width: v.$telefonoXXL) {
+        @content;
+    }
+}
+
+@mixin tablet {
+    @media (min-width: v.$tablet) {
+        @content;
+    }
+}
+
+@mixin tabletXL {
+    @media (min-width: v.$tabletXL) {
+        @content;
+    }
+}
+
+@mixin tabletXXL {
+    @media (min-width: v.$tabletXXL) {
+        @content;
+    }
+}
+
+@mixin desktop {
+    @media (min-width: v.$desktop) {
+        @content;
+    }
+}
+
+@mixin desktopXL {
+    @media (min-width: v.$desktopXL) {
+        @content;
+    }
+}
+
+@mixin desktopXXL {
+    @media (min-width: v.$desktopXXL) {
+        @content;
+    }
+}
+
+@mixin bgColor($colorPrimario) {
+    background-image: linear-gradient($colorPrimario 0%, $colorPrimario 100%);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+@mixin bgImagePe($url) {
+    content: "";
+    display: inline-block;
+    width: 1.5rem;
+    height: 1.5rem;
+    margin-right: .5rem;
+    background-image: url($url );
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+}
+
+@mixin flex-center-column($gap) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: $gap;
+}
+
+@mixin metric-badge($padding-v: 2px, $padding-h: 8px, $font-size: 1rem) {
+    display: flex;
+    align-items: center;
+    font-weight: 700;
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    padding: $padding-v $padding-h;
+    font-size: $font-size;
+}
+
+%link-reset {
+    text-decoration: none;
+    color: inherit;
+    &:hover { 
+        text-decoration: none; 
+        color: inherit; }
+}

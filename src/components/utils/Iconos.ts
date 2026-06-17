@@ -1,0 +1,14 @@
+export { BiBriefcase, BiCog, BiHomeAlt2, BiMenu, BiX  } from "react-icons/bi";
+export { FaArrowRight, FaInstagram, FaWhatsapp, FaLinkedin, FaGithubSquare, FaFacebookSquare, FaGithub, FaPlus, FaDribbble,  FaMinus, FaBriefcase, FaEnvelope, FaGlobe, FaLink } from "react-icons/fa";
+export { PiMicrosoftOutlookLogo, PiStack, PiPaintBrushBold, PiPalette, PiPlantFill } from 'react-icons/pi';
+export { AiTwotoneSchedule } from "react-icons/ai";
+export { SiCodefactor, SiNextdotjs, SiNodedotjs, SiReact, SiSass, SiHtml5, SiCanva, SiMysql, SiSequelize  } from 'react-icons/si';
+export { IoIosRocket, IoMdArrowBack } from 'react-icons/io';
+export { FaXTwitter, FaCss3Alt } from "react-icons/fa6"; 
+export { MdWaterDrop, MdWaterDamage, MdLocalFireDepartment, MdPool, MdCleaningServices, MdOutlineWeb, MdBuild, MdOutlineEmail, MdCall, MdWeb,  MdInfoOutline, MdLocationOn } from 'react-icons/md';
+export { TbChartBarPopular, TbWorld, TbBrandAdobePhotoshop, TbBrandAdobePremier} from "react-icons/tb";
+export { LuMonitorSmartphone } from "react-icons/lu";
+export { HiOutlineCodeBracket } from "react-icons/hi2";
+export { FiDatabase, FiExternalLink } from "react-icons/fi";
+export { BsQuestionCircle, BsFillPersonVcardFill } from "react-icons/bs";
+export { GiGardeningShears,  GiTreeGrowth, GiWateringCan } from "react-icons/gi";
