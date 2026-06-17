@@ -25,8 +25,8 @@ const footerMenu = [
 ];
 
 const footerRedes = [
-    { id:"1", icono: <FaInstagram className={styles.footer_social}/> , url:"/"},
-    { id:"2", icono: <FaWhatsapp className={styles.footer_social}/> , url:"/"},
+    { id:"1", icono: <FaInstagram className={styles.footer_social}/> , url:"https://www.instagram.com"},
+    { id:"2", icono: <FaWhatsapp className={styles.footer_social}/> , url:`https://wa.me/${numero}?text=${mensajeWSP}`},
 ];
 
 
