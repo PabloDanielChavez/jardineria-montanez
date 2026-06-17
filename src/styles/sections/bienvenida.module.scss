@@ -10,6 +10,7 @@
     padding-left: 10%;
     overflow: hidden;
 
+
     &::before {
         content: '';
         position: absolute;
@@ -184,6 +185,9 @@
 @media (max-width: 600px) {
     .logo_sin_fondo_h1 { font-size: 2.5rem !important; }
     .bienvenida_header_box_btn { flex-direction: column; }
+    .bienvenida_layout {
+        width: 90%;
+    }
 }
 
 @keyframes animacionFondo {
