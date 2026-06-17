@@ -25,9 +25,9 @@ export default function Bienvenida() {
             <div className={styles.bienvenida_layout}>
                 <div className={styles.bienvenida_header_box_informacion}>
                     <span className={styles.bienvenida_header_span_tag}>Buenos Aires</span>
-                    <h1 className={styles.bienvenida_header_h1_titulo}>Tu <strong className={styles.bienvenida_header_h1_resaltado}>jardin habla</strong> por nosotros</h1>
+                    <h1 className={styles.bienvenida_header_h1_titulo}>Tu <strong className={styles.bienvenida_header_h1_resaltado}>Jardin </strong>habla por <strong className={styles.bienvenida_header_h1_resaltado}>Nostros</strong></h1>
 
-                    <p className={styles.bienvenida_header_p_descripcion}><strong className={styles.bienvenida_header_p_resaltado}>Creamos jardines</strong> únicos, diseñados a medida, con estética impecable y terminaciones de excelencia. Cada proyecto lleva el sello de nuestra pasión</p>
+                    <p className={styles.bienvenida_header_p_descripcion}><strong className={styles.bienvenida_header_p_resaltado}>Creamos jardines únicos</strong>, diseñados a medida, con estética impecable y terminaciones de excelencia. Cada proyecto lleva el sello de nuestra pasión</p>
 
                     <div className={styles.bienvenida_header_box_btn}>
                         
