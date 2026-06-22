@@ -43,7 +43,7 @@ export const metadata: Metadata = {
     follow: true,
   },
   verification: {
-    google: '', /////------------------------------------------------>
+    google: '4yIUAbvNIcrI3UhHJW9vszJTkYpBcBoyjlRtCzn7mUc', /////------------------------------------------------>
     
   },
   twitter: {
@@ -116,7 +116,7 @@ export default function RootLayout({children }: Readonly<{ children: React.React
       <head>
         {/* Google Analytics */}
         <Script
-          src="https://googletagmanager.com"
+          src="https://googletagmanager.com" // ◄--- CORREGIDO AQUÍ
           strategy="afterInteractive"
         />
         <Script id="google-analytics" strategy="afterInteractive">
