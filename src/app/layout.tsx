@@ -114,9 +114,8 @@ export default function RootLayout({children }: Readonly<{ children: React.React
   return (
     <html lang="es-AR">
       <head>
-        {/* Google Analytics */}
         <Script
-          src="https://googletagmanager.com" // ◄--- CORREGIDO AQUÍ
+          src="https://googletagmanager.com" 
           strategy="afterInteractive"
         />
         <Script id="google-analytics" strategy="afterInteractive">
