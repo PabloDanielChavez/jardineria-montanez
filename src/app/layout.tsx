@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import "@/styles/main.scss";
 
 import Header from "@/components/sections/Header";
+import Script from 'next/script';
 const Footer = dynamic(() => import('@/components/sections/Footer'));
 
 export const metadata: Metadata = {
@@ -43,12 +44,20 @@ export const metadata: Metadata = {
   },
   verification: {
     google: '', /////------------------------------------------------>
+    
   },
   twitter: {
     card: "summary_large_image",
     title: "Jardinería y Mantenimiento | Montañez",
     description: "Servicios de jardinería y mantenimiento. Corte de pasto, poda de árboles, limpieza de terrenos, diseño y mantenimiento de espacios verdes. Solicite presupuesto.",
-    images: [""],  /////------------------------------------------------>
+    images: [
+      {
+        url: "/img/logo_nombre.webp",
+        width: 1200,
+        height: 630,
+        alt: "Montañez Jardinería y Mantenimiento",
+      }
+    ],  /////------------------------------------------------>
   },
   openGraph: {
     title: "Jardinería y Mantenimiento | Montañez",
@@ -104,6 +113,21 @@ export const viewport = {
 export default function RootLayout({children }: Readonly<{ children: React.ReactNode;}>) {
   return (
     <html lang="es-AR">
+      <head>
+        {/* Google Analytics */}
+        <Script
+          src="https://googletagmanager.com"
+          strategy="afterInteractive"
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-PQCJ7Q409E');
+          `}
+        </Script>
+      </head>
       <body >
         <header>
           <Header />
