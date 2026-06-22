@@ -3,7 +3,7 @@
 import Image from "next/image";
 import styles from "@/styles/sections/sobre.module.scss";
 import Link from "next/link";
-import { mensajePresupuesto, numero } from "../utils/variables";
+import { mensajePresupuesto, numeroUno } from "../utils/variables";
 
 export default function Sobre() {
     return (
@@ -24,14 +24,21 @@ export default function Sobre() {
                 </div>
                 
                 <div className={styles.sobre_contenido}>
-                    <p>
-                        <span className={styles.dropcap}>S</span>omos <strong>Jardineria Montañez</strong>, la Empresa Líder en Innovación, Diseño e Instalación de Espacios Verdes. 
-                        Contamos con más de 5 años de experiencia y más de 100 Proyectos realizados en todo el País. 
-                        Tenemos Profesionales Certificados en diferentes áreas, Alianzas Internacionales y Garantía sobre nuestros trabajos.
+                    <p className={styles.sobre_parrafo}>
+                        <span className={styles.dropcap}>S</span>omos
+                        <strong className={styles.sobre_destacado}> Jardinería Montañez</strong>, una empresa especializada en
+                        <strong className={styles.sobre_destacado}> jardinería profesional</strong>,
+                        <strong className={styles.sobre_destacado}> mantenimiento de jardines</strong>,
+                        <strong className={styles.sobre_destacado}> paisajismo</strong> y
+                        <strong className={styles.sobre_destacado}> cuidado de espacios verdes</strong>.
+
+                        Con más de <strong className={styles.sobre_destacado}>2 años de experiencia</strong> y más de
+                        <strong className={styles.sobre_destacado}> 100 proyectos realizados</strong>, brindamos
+                        <strong className={styles.sobre_destacado}> servicios de jardinería</strong> adaptados a las necesidades
+                        de cada cliente, combinando compromiso, atención al detalle y soluciones duraderas para hogares, comercios y propiedades de todo tipo.
                     </p>
-                    
-                    <Link href={`https://wa.me/${numero}?text=${mensajePresupuesto}`} className={styles.sobre_btn}>
-                        PRESUPUESTAR AHORA
+                    <Link href={`https://wa.me/${numeroUno}?text=${mensajePresupuesto}`} className={styles.sobre_btn}>
+                        Solicitar Presupuesto
                     </Link>
                 </div>
             </div>

@@ -15,8 +15,14 @@ export default function FraseMision() {
                 priority={false}
             />
             <div className={styles.mision_overlay}>
-                <blockquote className={`${styles.mision_texto}`}>
-                Nuestra <span className={styles.mision_highlight}>Vision</span> es <span className={styles.mision_highlight}>rediseñar</span> los espacios urbanos para que puedas conectarte con la <span className={styles.mision_highlight}>Naturaleza</span> y descubrir su mejor <span className={styles.mision_highlight}>versión</span>.
+                <blockquote className={styles.mision_texto}>
+                    Nuestra <span className={styles.mision_highlight}>visión</span> es
+                    transformar jardines, parques y <span className={styles.mision_highlight}>espacios</span> <span className={styles.mision_highlight}>verdes</span>    
+                    <span> </span>en entornos que inspiren bienestar, combinando
+                    <span className={styles.mision_highlight}>jardinería</span> <span className={styles.mision_highlight}>profesional</span>,<span> </span>
+                    <span className={styles.mision_highlight}>paisajismo</span> y
+                    respeto por la <span className={styles.mision_highlight}>naturaleza</span> <span> </span>
+                    para que cada espacio alcance su mejor versión.
                 </blockquote>
             </div>
         </section>

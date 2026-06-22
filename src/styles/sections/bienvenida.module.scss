@@ -85,7 +85,7 @@
             font-size: 0.8rem;
             margin-bottom: 20px;
             border-radius: 6px;
-            animation: fadeUp .6s ease forwards, pulseTag 3s infinite;
+            animation: fadeUp 1s ease forwards, pulseTag 3s infinite;
         }
 
         &_h1 {
@@ -98,7 +98,7 @@
                 margin-bottom: 10px;
                 color: #fdfdfd;
                 margin-top: 10px;
-                animation: fadeUp .8s ease .15s forwards;
+                animation: fadeUp 1s ease .15s forwards;
             }
             &_resaltado {
                 position: relative;
@@ -120,7 +120,7 @@
                 color: v.$color-secundary;
                 margin-bottom: 10px;
                 font-weight: 900;
-                animation: fadeUp .8s ease .3s forwards;
+                animation: fadeUp 1s ease .3s forwards;
                 position: relative;
                 &::after {
                     content: "";
@@ -156,7 +156,7 @@
                 line-height: 1.6;
                 margin-bottom: 30px;
                 font-weight: 500;
-                animation: fadeUp .8s ease .45s forwards;
+                animation: fadeUp 1.2s ease .45s forwards;
             }
             &_resaltado {
                 font-size: 1.3rem;
@@ -171,7 +171,7 @@
             display: flex;
             justify-content: center;
             gap: 15px;
-            animation: fadeUp .8s ease .6s forwards;
+            animation: fadeUp 1.2s ease .6s forwards;
 
         }
         &_btn {

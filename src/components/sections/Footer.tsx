@@ -4,14 +4,15 @@ import { PiPlantFill } from "react-icons/pi";
 import { MdLocationOn, MdPhone, MdEmail, MdAccessTime } from "react-icons/md";
 import { FaInstagram, FaWhatsapp } from "react-icons/fa";
 import styles from "@/styles/sections/footer.module.scss";
-import { mensajeEmail, mensajeHorarios, mensajeWSP, numero } from "../utils/variables";
+import { mensajeHorarios, mensajeWSP, numeroDos, numeroUno } from "../utils/variables";
+import Image from "next/image";
 
 
 const footerContacto = [
     { id:"1", nombre: " San Esteban, Cañuelas, Buenos Aires.", icono: <MdLocationOn className={styles.footer_icono}/> , url:"https://maps.app.goo.gl/F85DGScrQwF3ub8F8"},
-    { id:"2", nombre: " +54 9 2226 60-7508", icono: <MdPhone className={styles.footer_icono}/> , url:`https://wa.me/${numero}?text=${mensajeWSP}`},
-    { id:"3", nombre: " jardineria@gmail.com", icono: <MdEmail className={styles.footer_icono}/> , url:`mailto:jardineria@gmail.com?subject=${mensajeEmail}`},
-    { id:"4", nombre: " Lu. a Vi. 9 a 19hs", icono: <MdAccessTime className={styles.footer_icono}/>, url:`https://wa.me/${numero}?text=${mensajeHorarios}`}, 
+    { id:"2", nombre: " +54 9 2226 60-7508", icono: <MdPhone className={styles.footer_icono}/> , url:`https://wa.me/${numeroUno}?text=${mensajeWSP}`},
+    { id:"3", nombre: " +54 9 11 6368-3403", icono: <MdPhone className={styles.footer_icono}/> , url:`https://wa.me/${numeroDos}?text=${mensajeWSP}`},
+    { id:"4", nombre: " Lu. a Sa. 9 a 19hs", icono: <MdAccessTime className={styles.footer_icono}/>, url:`https://wa.me/${numeroUno}?text=${mensajeHorarios}`}, 
 ];
 
 
@@ -26,7 +27,7 @@ const footerMenu = [
 
 const footerRedes = [
     { id:"1", icono: <FaInstagram className={styles.footer_social}/> , url:"https://www.instagram.com"},
-    { id:"2", icono: <FaWhatsapp className={styles.footer_social}/> , url:`https://wa.me/${numero}?text=${mensajeWSP}`},
+    { id:"2", icono: <FaWhatsapp className={styles.footer_social}/> , url:`https://wa.me/${numeroUno}?text=${mensajeWSP}`},
 ];
 
 
@@ -43,9 +44,14 @@ export default function Footer() {
   return (
     <footer className={styles.footer}>
       <div className={styles.footer_contenedor}>
-        <div className={`${styles.footer_logo}  ${styles.footer_GRIDCOL}`}>
-          <PiPlantFill className={styles.footer_logo_icono} />
-          <h2 className={styles.footer_logo_h2}>Jardineria Montañez</h2>
+        <div className={styles.footer_box_logo}>
+          <Image 
+              className={styles.footer_logo_imagen}
+              src="/img/logo_nombre_chico.png"
+              alt={"LOGOTIPO"}
+              width={200}
+              height={57}
+          />
         </div>
         <div className={styles.footer_col}>
           <h3 className={styles.footer_h3}>SECCIONES</h3>
@@ -82,7 +88,18 @@ export default function Footer() {
         </div>
       </div>
       <div className={styles.footer_legal}>
-        <p>Todos los derechos reservados</p>
+      </div>
+      <div className={styles.footer_legal}>
+        <p className={styles.footer_copy_p}>©2026 copyright<strong className={styles.destacadoPrimary}> Jardineria Montañez </strong><strong className={styles.destacadoDorado}>|</strong>  Todos los derechos reservados</p>
+        <p className={styles.footer_copy_p}>Desarrollado por
+          <Link
+            href={"https://paginaswebchavez.netlify.app"}
+            aria-label="Desarrollador"
+            className={styles.footer_LINKDESARROLLADOR}
+          >
+            <strong className={styles.destacadoPrimary}> PaginasWebChavez</strong>
+          </Link>
+        </p>
       </div>
     </footer>
   );

@@ -1,7 +1,7 @@
 "use client";
 
 import styles from "@/styles/sections/servicios.module.scss";
-import { GiBroom, GiGardeningShears, GiTreeGrowth, GiWateringCan,  } from "@/components/utils/Iconos";
+import { GiBroom, GiGardeningShears, GiHighGrass, GiTreeGrowth, GiWateringCan,  } from "@/components/utils/Iconos";
 import Image from "next/image";
 
 
@@ -10,34 +10,41 @@ export default function Servicios() {
     const servicios = [
         {
             nombre: "Mantenimiento de Jardines",
-            texto: "Poda, limpieza y cuidado profesional para mantener jardines saludables, ordenados y con una apariencia impecable durante todo el año.",
+            texto: "Poda, desmalezado, limpieza y cuidado de jardines para mantener espacios verdes saludables, ordenados y con una apariencia impecable durante todo el año.",
             icono: <GiGardeningShears className={styles.servicios_icono}/>,
             img: "/img/jardinero.webp"
         },
         {
             nombre: "Sistemas de Riego",
-            texto: "Instalación, reparación y optimización de sistemas de riego para garantizar un uso eficiente del agua y el crecimiento de tus plantas.",
+            texto: "Instalación, reparación y optimización de sistemas de riego para favorecer el crecimiento de plantas, jardines y espacios verdes utilizando el agua de forma eficiente.",
             icono: <GiWateringCan className={styles.servicios_icono}/>,
             img: "/img/jardinero_regando.webp"
         },
         {
-            nombre: "Limpieza de Exteriores",
-            texto: "Limpieza integral de patios, veredas y espacios exteriores, eliminando hojas, residuos y acumulaciones que afectan la estética.",
+            nombre: "Limpieza de Terrenos y Exteriores",
+            texto: "Realizamos limpieza de terrenos, patios, veredas y espacios exteriores, retirando hojas, residuos y maleza para recuperar el orden y la estética del lugar.",
             icono: <GiBroom className={styles.servicios_icono}/>,
             img: "/img/jardinero_limpiando.webp"
         },
         {
             nombre: "Poda de Árboles",
-            texto: "Poda segura y controlada para mejorar la salud, el crecimiento y la seguridad de árboles, arbustos y especies ornamentales.",
+            texto: "Servicio de poda de árboles y arbustos para mejorar la seguridad, favorecer un crecimiento saludable y mantener la estética de jardines y espacios verdes..",
             icono: <GiTreeGrowth className={styles.servicios_icono}/>,
             img: "/img/jardinero_talando.webp"
+        },
+        {
+            nombre: "Corte de Césped",
+            texto: "Servicio de corte de césped y mantenimiento de áreas verdes para conservar jardines prolijos, saludables y listos para disfrutar durante todo el año.",
+            icono: <GiHighGrass className={styles.servicios_icono}/>,
+            img: "/img/jardinero_cortando.webp"
         }
+
     ];
     return (
         <section className={styles.servicios}>
             <div  className={styles.servicios_presentacion}>
-                <h2 className={styles.servicios_titulo}>¿Qué ofrecemos?</h2>
-                <p className={styles.servicios_subtitulo}>Más de 2 años ofreciendo un mantenimiento integral a nuestros clientes</p>
+                <h2 className={styles.servicios_titulo}>Servicios de Jardinería y Mantenimiento</h2>
+                <p className={styles.servicios_subtitulo}>Más de 2 años brindando servicios de jardinería, mantenimiento de jardines y cuidado de espacios verdes.</p>
             </div>
             <div className={styles.servicios_layout}>
                 <div className={styles.servicios_container_principal}>
@@ -64,5 +71,5 @@ export default function Servicios() {
                 </div>
             </div>
         </section>
-  );
+    );
 }

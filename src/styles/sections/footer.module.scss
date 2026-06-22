@@ -41,6 +41,11 @@
         gap: .2rem;
         margin-bottom: 1.5rem;
         justify-content: flex-start;
+        &_imagen {
+            margin-top: 1rem;
+            min-width: 200px;
+            min-height: 57px;
+        }
     }
 
     &_logo_icono {
@@ -110,12 +115,20 @@
         text-decoration: none;
         transition: color .25s ease, transform .25s ease;
         justify-content: center;
+        font-size: 1rem;
         @include m.tabletXL {
             justify-content: start;
+            font-size: 1.2rem;
         }
         &:hover { 
             color: v.$color-white; 
             transform: translateX(4px);
+        }
+        &DESARROLLADOR {
+            text-decoration: none;
+            color: inherit;
+            transition: all .3s ease;
+            font-size: 1rem;
         }
     }
 
@@ -164,5 +177,19 @@
         text-align: center;
         font-size: 0.85rem;
         color: v.$color-white-trans;
+    }
+
+    .destacadoDorado {
+        color: v.$color-oro;
+        font-weight: 700; // Asegúrate de que tenga buen grosor
+        letter-spacing: 0.5px; // Un poco de espacio lo hace ver más profesional
+        text-shadow: 0px 0px 8px rgba(245, 166, 35, 0.3); // Un sutil resplandor
+    }
+    
+    .destacadoPrimary {
+        color: v.$color-primary;
+        font-weight: 700;
+        letter-spacing: 0.5px; // Un poco de espacio lo hace ver más profesional
+        text-shadow: 0px 0px 8px rgba(161, 35, 245, 0.3); // Un sutil resplandor
     }
 }

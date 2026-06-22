@@ -7,7 +7,7 @@
     position: fixed;
     top: 0;
     z-index: 100;
-    background: #333333;
+    background: rgba(13,15,12,1);
     transition: background .6s ease, backdrop-filter .6s ease, padding .6s ease;
         & span {
             color: v.$color-white;
@@ -17,13 +17,13 @@
         }
     &_scrolled {
         padding: 0.5rem 0;
-        background: #242424;
+        background: rgba(13,15,12,1);
         backdrop-filter: blur(20px);
         border-bottom: 1px solid rgba(255,255,255,.08);
         box-shadow: 0 10px 40px rgba(0,0,0,.15);
+        transition: all .4s ease;
         & img {
-            width: 200px;
-            height: 30px;
+            transform: scale(.75);
         }
     }
 
@@ -44,18 +44,29 @@
             gap: 12px;
             position: relative;
             transition: transform .4s ease;
+            overflow: hidden;
+            border-radius: 100%;
             &::before {
                 content: "";
                 position: absolute;
-                width: 60px;
-                height: 60px;
-                background: rgba(v.$color-primary,.25);
+                width: 30px;
+                height: 30px;
+                background: color-mix(in srgb, v.$color-primary 25%, transparent);
                 filter: blur(25px);
                 z-index: -1;
                 animation: pulseGlow 4s ease-in-out infinite;
             }
         }
-
+        
+        &_img {
+            width: 100%;
+            height: 100%;
+            border-radius: 100%;
+            object-fit: cover;
+            transition: all 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+            transition: transform .4s ease;
+            transform: scale(1);
+        }
         &_icono {
             font-size: 1.5rem;
             color: v.$color-primary;
@@ -71,12 +82,6 @@
             margin: 0;
             font-family: 'Montserrat', sans-serif;
         }
-    }
-    &_logo_img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        transition: all 0.7s cubic-bezier(0.16, 1, 0.3, 1);
     }
     &_actions {
         display: flex;

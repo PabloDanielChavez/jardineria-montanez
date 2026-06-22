@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react';
 import Image from "next/image";
 import styles from "@/styles/sections/bienvenida.module.scss";
 import Link from "next/link";
-import { mensajePresupuesto, numero } from "../utils/variables";
+import { mensajePresupuesto, numeroUno } from "../utils/variables";
 import { GiGardeningShears, MdBuild, PiPlantFill , FaWhatsapp, FaArrowDown} from "@/components/utils/Iconos";
 
 export default function Bienvenida() {
@@ -33,8 +33,19 @@ export default function Bienvenida() {
             <div className={styles.bienvenida_layout}>
                 <div className={styles.bienvenida_header_box_informacion}>
                     <span className={styles.bienvenida_header_span_tag}>Buenos Aires</span>
-                    <h1 className={styles.bienvenida_header_h1_titulo}>Tu <strong className={styles.bienvenida_header_h1_resaltado}>Jardin </strong>habla por <strong className={styles.bienvenida_header_h1_resaltado}>Nostros</strong></h1>
-                    <p className={styles.bienvenida_header_p_descripcion}><strong className={styles.bienvenida_header_p_resaltado}>Creamos jardines únicos</strong>, diseñados a medida, con estética impecable y terminaciones de excelencia. Cada proyecto lleva el sello de nuestra pasión</p>
+                    <h1 className={styles.bienvenida_header_h1_titulo}>Tu <strong className={styles.bienvenida_header_h1_resaltado}>Jardín</strong> en Manos de <strong className={styles.bienvenida_header_h1_resaltado}>Profesionales</strong> de la <strong className={styles.bienvenida_header_h1_resaltado}>Jardinería</strong></h1>
+                    <p className={styles.bienvenida_header_p_descripcion}>
+                        Brindamos servicios de <strong className={styles.bienvenida_header_p_resaltado}>jardinería</strong>,
+                        <strong className={styles.bienvenida_header_p_resaltado}> mantenimiento de jardines</strong>,
+                        <strong className={styles.bienvenida_header_p_resaltado}> corte de pasto</strong>,
+                        <strong className={styles.bienvenida_header_p_resaltado}> poda de árboles</strong>,
+                        <strong className={styles.bienvenida_header_p_resaltado}> desmalezado</strong>,
+                        <strong className={styles.bienvenida_header_p_resaltado}> limpieza de terrenos</strong> y
+                        <strong className={styles.bienvenida_header_p_resaltado}> cuidado de espacios verdes</strong>,
+                        combinando <strong className={styles.bienvenida_header_p_resaltado}>experiencia</strong>,
+                        <strong className={styles.bienvenida_header_p_resaltado}> compromiso</strong> y atención al
+                        <strong className={styles.bienvenida_header_p_resaltado}> detalle</strong>.
+                    </p>
                     <div className={styles.bienvenida_header_box_btn}>
                         <button 
                             onClick={() => scrollToSection("servicio")}  
@@ -43,7 +54,7 @@ export default function Bienvenida() {
                             Ver Servicios
                             <FaArrowDown className={`${styles.bienvenida_icono_secun}`}/>
                         </button>
-                        <Link href={`https://wa.me/${numero}?text=${mensajePresupuesto}`} className={`${styles.bienvenida_header_btn} ${styles.bienvenida_header_btn_alt}`}><FaWhatsapp  className={`${styles.bienvenida_icono}`}/> Pedir Presupuesto</Link>
+                        <Link href={`https://wa.me/${numeroUno}?text=${mensajePresupuesto}`} className={`${styles.bienvenida_header_btn} ${styles.bienvenida_header_btn_alt}`}><FaWhatsapp  className={`${styles.bienvenida_icono}`}/> Pedir Presupuesto</Link>
                     </div>
 
                     {/* Puedes agregar aquí el bloque de 500+ Proyectos, etc. */}

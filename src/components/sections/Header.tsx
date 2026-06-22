@@ -3,6 +3,8 @@
 import { useState, useEffect } from 'react';
 import styles from '@/styles/sections/header.module.scss';
 import { BiBriefcase, BiEnvelope, BiHelpCircle, BiHomeAlt2, BiMenu, BiTargetLock, BiUser, PiPlantFill, } from "@/components/utils/Iconos";
+import Image from 'next/image';
+import Link from 'next/link';
 
 export default function Header() {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -38,9 +40,19 @@ export default function Header() {
         
         <header className={`${styles.header} ${isScrolled ? styles.header_scrolled : ''}`}>
             <div className={styles.header_container}>
-                <div className={styles.header_logo_box}>
-                    <h2 className={styles.header_logo_h2}>Jardineria<PiPlantFill className={styles.header_logo_icono}/>Montañez</h2>
-                </div>
+                <Link href="/" className={styles.header_logo} aria-label="Ir a inicio">
+                    <div className={styles.header_logo_box}>
+                        <Image 
+                            className={styles.header_logo_img}
+                            src={`/img/logo.png`} 
+                            alt={"LOGOTIPO"}
+                            title={"LOGOTIPO"}
+                            width={50} 
+                            height={50}
+                            sizes="50px"
+                        />
+                    </div> 
+                </Link>
                 <button 
                     className={styles.header_menuBtn} 
                     aria-label="Abrir menú de navegación"

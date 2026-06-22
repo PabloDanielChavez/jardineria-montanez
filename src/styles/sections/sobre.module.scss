@@ -64,7 +64,7 @@
 
         @include m.tablet {
             display: grid;
-            grid-template-columns: 1.1fr .9fr;
+            grid-template-columns: 0.8fr 1.2fr;
         }
     }
 
@@ -99,7 +99,7 @@
 
     &_contenido {
         font-size: 1.2rem;
-        max-width: 600px;
+        max-width: 800px;
         line-height: 1.8;
         color: v.$color-text;
 
@@ -118,20 +118,20 @@
             color: v.$color-primary;
             font-family: 'Montserrat', sans-serif;
         }
+    }
 
-        strong {
-            color: v.$color-bosque;
-            position: relative;
-            &::after {
-                content: "";
-                position: absolute;
-                left: 0;
-                bottom: -2px;
-                width: 100%;
-                height: 8px;
-                background: rgba(v.$color-primary,.25);
-                z-index: -1;
-            }
+    &_destacado {
+        color: v.$color-bosque;
+        position: relative;
+        &::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: -2px;
+            width: 100%;
+            height: 8px;
+            background: rgba(v.$color-primary,.25);
+            z-index: -1;
         }
     }
 
