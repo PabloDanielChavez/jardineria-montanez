@@ -43,7 +43,7 @@ export const metadata: Metadata = {
     follow: true,
   },
   verification: {
-    google: '4yIUAbvNIcrI3UhHJW9vszJTkYpBcBoyjlRtCzn7mUc', /////------------------------------------------------>
+    google: '4yIUAbvNIcrI3UhHJW9vszJTkYpBcBoyjlRtCzn7mUc', 
     
   },
   twitter: {
@@ -57,7 +57,7 @@ export const metadata: Metadata = {
         height: 630,
         alt: "Montañez Jardinería y Mantenimiento",
       }
-    ],  /////------------------------------------------------>
+    ], 
   },
   openGraph: {
     title: "Jardinería y Mantenimiento | Montañez",
@@ -115,7 +115,7 @@ export default function RootLayout({children }: Readonly<{ children: React.React
     <html lang="es-AR">
       <head>
         <Script
-          src="https://googletagmanager.com" 
+          src={`https://www.googletagmanager.com/gtag/js?id=G-PQCJ7Q409E`}
           strategy="afterInteractive"
         />
         <Script id="google-analytics" strategy="afterInteractive">
@@ -123,6 +123,7 @@ export default function RootLayout({children }: Readonly<{ children: React.React
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
+
             gtag('config', 'G-PQCJ7Q409E');
           `}
         </Script>
