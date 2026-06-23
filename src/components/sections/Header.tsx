@@ -12,7 +12,7 @@ export default function Header() {
     const menu = [
         { id: 1, titulo: "Inicio", target: "inicio", icono: <BiHomeAlt2 size={20} /> },
         { id: 2, titulo: "Sobre", target: "sobre", icono: <BiUser size={20} /> }, // O BiInfoCircle
-        { id: 3, titulo: "Visión", target: "vision", icono: <BiTargetLock size={20} /> },
+        { id: 3, titulo: "Visión", target: "visión", icono: <BiTargetLock size={20} /> },
         { id: 4, titulo: "Servicio", target: "servicio", icono: <BiBriefcase size={20} /> },
         { id: 5, titulo: "Contacto", target: "contacto", icono: <BiEnvelope size={20} /> },
         { id: 6, titulo: "Cómo", target: "como", icono: <BiHelpCircle size={20} /> }, // O BiQuestionMark

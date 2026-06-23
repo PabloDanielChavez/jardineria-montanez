@@ -19,15 +19,15 @@ const footerContacto = [
 const footerMenu = [
     { id:"1", nombre: "Inicio",target: "inicio", icono: <MdLocationOn className={styles.footer_icono}/>},
     { id:"2", nombre: "Nosotros",target: "sobre", icono: <MdAccessTime className={styles.footer_icono}/>}, 
-    { id:"3", nombre: "Vision",target: "vision", icono: <MdEmail className={styles.footer_icono}/>},
+    { id:"3", nombre: "Vision",target: "visión", icono: <MdEmail className={styles.footer_icono}/>},
     { id:"4", nombre: "Servicios",target: "servicio", icono: <MdEmail className={styles.footer_icono}/>},
     { id:"5", nombre: "Contacto",target: "contacto", icono: <MdAccessTime className={styles.footer_icono}/>}, 
     { id:"6", nombre: "¿Como Trabajamos?",target: "como", icono: <MdAccessTime className={styles.footer_icono}/>}, 
 ];
 
 const footerRedes = [
-    { id:"1", icono: <FaInstagram className={styles.footer_social}/> , url:"https://www.instagram.com"},
-    { id:"2", icono: <FaWhatsapp className={styles.footer_social}/> , url:`https://wa.me/${numeroUno}?text=${mensajeWSP}`},
+    { id:"1", label: "Instagram",icono: <FaInstagram className={styles.footer_social}/> , url:"https://www.instagram.com"},
+    { id:"2", label: "Whatsapp",icono: <FaWhatsapp className={styles.footer_social}/> , url:`https://wa.me/${numeroUno}?text=${mensajeWSP}`},
 ];
 
 
@@ -61,6 +61,7 @@ export default function Footer() {
                 <button
                   className={styles.footer_LINK}
                   onClick={() => scrollToSection(item.target)} 
+                  aria-label={`Boton ${item.target}` }
                 >
                     {item.nombre}
                   </button>
@@ -73,7 +74,12 @@ export default function Footer() {
           <ul className={styles.footer_ul}>
             {footerContacto.map((item) => (
               <li key={item.nombre} className={styles.footer_li}>
-                <Link key={item.id} href={item.url} className={styles.footer_LINK}>
+                <Link 
+                  key={item.id} 
+                  href={item.url} 
+                  className={styles.footer_LINK} 
+                  aria-label={`Boton ${item.nombre}` }
+                >
                   {item.icono}
                   {item.nombre}
                 </Link>
@@ -82,7 +88,14 @@ export default function Footer() {
           </ul>
           <div className={styles.footer_social}>
             {footerRedes.map((item) => (
-              <Link key={item.id} href={item.url} className={`${styles.footer_LINK} ${styles.footer_RED}`}>{item.icono}</Link>
+              <Link 
+                key={item.id} 
+                href={item.url} 
+                className={`${styles.footer_LINK} ${styles.footer_RED}`}
+                aria-label={`Boton ${item.label}` }
+              >
+                {item.icono}
+                </Link>
             ))}
           </div>
         </div>

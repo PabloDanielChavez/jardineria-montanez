@@ -29,7 +29,7 @@ export default function Bienvenida() {
                 priority
                 className={styles.backgroundImage}
                 sizes="100vw"
-            />
+            />  
             <div className={styles.bienvenida_layout}>
                 <div className={styles.bienvenida_header_box_informacion}>
                     <span className={styles.bienvenida_header_span_tag}>Buenos Aires</span>
