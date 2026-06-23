@@ -93,10 +93,7 @@
 
         &_h1 {
             &_titulo {
-                font-size: 2.5rem;
-                @include m.telefonoXL {
-                    font-size: 4.5rem;
-                }
+                font-size: clamp(1.9rem, 10.5vw, 4.5rem);
                 line-height: 1;
                 margin-bottom: 10px;
                 color: #fdfdfd;

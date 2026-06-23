@@ -33,7 +33,7 @@ export default function Bienvenida() {
             <div className={styles.bienvenida_layout}>
                 <div className={styles.bienvenida_header_box_informacion}>
                     <span className={styles.bienvenida_header_span_tag}>Buenos Aires</span>
-                    <h1 className={styles.bienvenida_header_h1_titulo}>Tu <strong className={styles.bienvenida_header_h1_resaltado}>Jardín</strong> en Manos de <strong className={styles.bienvenida_header_h1_resaltado}>Profesionales</strong> de la <strong className={styles.bienvenida_header_h1_resaltado}>Jardinería</strong></h1>
+                    <h1 className={styles.bienvenida_header_h1_titulo}>Tu <strong className={styles.bienvenida_header_h1_resaltado}>Jardín</strong> en Manos de Profesionales de la <strong className={styles.bienvenida_header_h1_resaltado}>Jardinería</strong></h1>
                     <p className={styles.bienvenida_header_p_descripcion}>
                         Brindamos servicios de <strong className={styles.bienvenida_header_p_resaltado}>jardinería</strong>,
                         <strong className={styles.bienvenida_header_p_resaltado}> mantenimiento de jardines</strong>,
