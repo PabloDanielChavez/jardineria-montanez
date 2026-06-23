@@ -6,8 +6,10 @@ import Bienvenida from '@/components/sections/Bienvenida';
 import BtnWSP from '@/components/sub_components/btnWSP';
 
 const Servicio = dynamic(() => import('@/components/sections/Servicio'), { loading: () => <Loading />, ssr: true });
-const Vision = dynamic(() => import('@/components/sections/Vision'), { loading: () => <Loading />, ssr: true });
 const Sobre = dynamic(() => import('@/components/sections/Sobre'), { loading: () => <Loading />, ssr: true });
+const Testimonios = dynamic(() => import('@/components/sections/Testimonios'), { loading: () => <Loading />, ssr: true });
+const Galeria = dynamic(() => import('@/components/sections/Galeria'), { loading: () => <Loading />, ssr: true });
+const Vision = dynamic(() => import('@/components/sections/Vision'), { loading: () => <Loading />, ssr: true });
 const Contacto = dynamic(() => import('@/components/sections/Contacto'), { loading: () => <Loading />, ssr: true });
 const Como = dynamic(() => import('@/components/sections/ComoTrabajamos'), { loading: () => <Loading /> });
 
@@ -16,6 +18,8 @@ export default function Home() {
     <>
       <div id="inicio"><Bienvenida /></div>
       <div id="sobre"><Sobre /></div>
+      {/* <div id="Testimonios"><Testimonios /></div> */}
+      <div id="galeria"><Galeria /></div>
       <div id="vision"><Vision /></div>
       <div id="servicio"><Servicio /></div>
       <div id="contacto"><Contacto /></div>

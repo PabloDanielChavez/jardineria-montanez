@@ -5,23 +5,23 @@ import Image from "next/image";
 
 export default function FraseMision() {
     return (
-        <section className={styles.mision}>
+        <section className={styles.vision}>
             <Image 
                 src="/img/fondo_vision.webp" 
                 alt="Naturaleza y espacio urbano" 
                 fill
-                className={styles.mision_bg}
+                className={styles.vision_bg}
                 quality={75} 
                 priority={false}
             />
-            <div className={styles.mision_overlay}>
-                <blockquote className={styles.mision_texto}>
-                    Nuestra <span className={styles.mision_highlight}>visión</span> es
-                    transformar jardines, parques y <span className={styles.mision_highlight}>espacios</span> <span className={styles.mision_highlight}>verdes</span>    
+            <div className={styles.vision_overlay}>
+                <blockquote className={styles.vision_texto}>
+                    Nuestra <span className={styles.vision_highlight}>visión</span> es
+                    transformar jardines, parques y <span className={styles.vision_highlight}>espacios</span> <span className={styles.vision_highlight}>verdes</span>    
                     <span> </span>en entornos que inspiren bienestar, combinando
-                    <span className={styles.mision_highlight}>jardinería</span> <span className={styles.mision_highlight}>profesional</span>,<span> </span>
-                    <span className={styles.mision_highlight}>paisajismo</span> y
-                    respeto por la <span className={styles.mision_highlight}>naturaleza</span> <span> </span>
+                    <span className={styles.vision_highlight}>jardinería</span> <span className={styles.vision_highlight}>profesional</span>,<span> </span>
+                    <span className={styles.vision_highlight}>paisajismo</span> y
+                    respeto por la <span className={styles.vision_highlight}>naturaleza</span> <span> </span>
                     para que cada espacio alcance su mejor versión.
                 </blockquote>
             </div>
