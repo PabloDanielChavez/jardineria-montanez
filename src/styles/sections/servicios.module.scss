@@ -44,16 +44,26 @@
     }
 
     &_container_principal {
-        display: flex;
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
         align-items: stretch;
         justify-content: center;
         flex-wrap: wrap;       
         gap: 30px;
         width: 100%;
-        
+        @include m.telefonoXXL {
+            grid-template-columns: repeat(2, 1fr);
+        }
         @include m.tabletXL {
-        flex-direction: row;
-        flex-wrap: nowrap;
+            grid-template-columns: repeat(3, 1fr);
+        }
+        
+        @include m.desktop {
+            display: flex;
+            align-items: stretch;
+            justify-content: center;
+            flex-direction: row;
+            flex-wrap: nowrap;
         }
     }
 
@@ -163,7 +173,7 @@
     
     &_texto {
         color: rgba(255,255,255,.85);
-        font-size: 0.95rem;
+        font-size: 0.85rem;
         line-height: 1.6;
         font-weight: 400;
     }
