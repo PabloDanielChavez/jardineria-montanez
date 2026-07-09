@@ -9,10 +9,10 @@ const Footer = dynamic(() => import('@/components/sections/Footer'));
 export const metadata: Metadata = {
   metadataBase: new URL('https://jardineriamontanez.netlify.app'),
   title: {
-    default: "Jardinería en Cañuelas | Montañez",
+    default: "Jardinería en Buenos Aires | Montañez",
     template: "%s | Jardinería Montañez"
   },
-  description: "Corte de césped, poda, limpieza de terrenos, desmalezado y mantenimiento de jardines. Pedí presupuesto por WhatsApp enviando fotos del espacio.",
+  description: "Corte de pasto, poda, limpieza de terrenos, desmalezado y mantenimiento de jardines. Pedí presupuesto por WhatsApp enviando fotos del espacio.",
 
   authors: [{ name: "Pablo Daniel Chavez" }],
   keywords: [
@@ -38,8 +38,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Jardinería en Cañuelas | Montañez",
-    description: "Corte de césped, poda, limpieza y mantenimiento de jardines. Pedí presupuesto por WhatsApp.",
+    title: "Jardinería en Buenos Aires | Montañez",
+    description: "Corte de pasto, poda, limpieza y mantenimiento de jardines. Pedí presupuesto por WhatsApp.",
     images: [
       {
         url: "/img/logo_nombre.jpg",
@@ -50,8 +50,8 @@ export const metadata: Metadata = {
     ], 
   },
   openGraph: {
-    title: "Jardinería en Cañuelas | Montañez",
-    description: "Corte de césped, poda, limpieza de terrenos, desmalezado y mantenimiento de jardines. Pedí presupuesto por WhatsApp.",
+    title: "Jardinería en Buenos Aires | Montañez",
+    description: "Corte de pasto, poda, limpieza de terrenos, desmalezado y mantenimiento de jardines. Pedí presupuesto por WhatsApp.",
     url: "https://jardineriamontanez.netlify.app",
     siteName: "Montañez Jardinería",
     images: [

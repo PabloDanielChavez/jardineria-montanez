@@ -17,7 +17,7 @@ export default function Servicios() {
         },
         {
             nombre: "Poda de árboles y arbustos",
-            texto: "Ordenamos árboles y arbustos según el estado del espacio, buscando más prolijidad, seguridad y mejor circulación.",
+            texto: "Realizamos poda de árboles y arbustos para mantenerlos sanos, seguros y estéticamente agradables.",
             consulta: "poda de árboles y arbustos",
             icono: <GiTreeGrowth className={styles.servicios_icono} />,
             img: "/img/jardinero_talando.webp",

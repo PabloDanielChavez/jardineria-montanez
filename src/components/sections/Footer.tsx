@@ -10,10 +10,10 @@ import { mensajeWSP, numeroDos, numeroUno } from "../utils/variables";
 const footerMenu = [
     { nombre: "Inicio", target: "inicio" },
     { nombre: "Servicios", target: "servicios" },
+    { nombre: "Contacto", target: "contacto" },
     { nombre: "Trabajos", target: "trabajos" },
     { nombre: "Cómo trabajamos", target: "como-trabajamos" },
     { nombre: "Preguntas frecuentes", target: "preguntas" },
-    { nombre: "Contacto", target: "contacto" },
 ];
 
 const footerServicios = [
