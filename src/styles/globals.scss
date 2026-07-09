@@ -1,74 +1,118 @@
 @use 'base/variables.module.scss' as v;
-@use 'base/mixins.module.scss' as m;
 
 *, *::before, *::after {
     box-sizing: border-box;
 }
 
+html {
+    scroll-behavior: smooth;
+    background: v.$color-crema;
+}
+
 body {
     margin: 0;
     padding: 0;
-    font-family: monospace, sans-serif, system-ui;
     overflow-x: hidden;
+    background: v.$color-crema;
+    color: v.$color-text;
+    font-family: v.$font-main;
+    font-size: 16px;
+    line-height: 1.6;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
 }
 
 main {
-    padding-top: 3.6rem;
+    padding-top: 78px;
 }
 
-#inicio, 
-#servicio, 
-#vision, 
-#sobre, 
-#contacto, 
-#como {
-    scroll-margin-top: 100px; 
+h1, h2, h3, p {
+    margin-top: 0;
+}
+
+h1, h2 {
+    color: v.$color-dark;
+    font-family: v.$font-heading;
+    font-weight: 500;
+    letter-spacing: -.035em;
+}
+
+button, a {
+    font: inherit;
+}
+
+a, button, summary {
+    &:focus-visible {
+        outline: 3px solid rgba(v.$color-secundary, .42);
+        outline-offset: 4px;
+    }
+}
+
+::selection {
+    background: v.$color-primary;
+    color: v.$color-negro-fondo;
+}
+
+#inicio,
+#confianza,
+#servicios,
+#trabajos,
+#recuperacion,
+#mantenimiento,
+#como-trabajamos,
+#por-que-confiar,
+#opiniones,
+#preguntas,
+#contacto {
+    scroll-margin-top: 96px;
 }
 
 .whatsapp_float {
     position: fixed;
-    bottom: 30px;
-    right: 30px;
+    right: clamp(1rem, 3vw, 2rem);
+    bottom: clamp(1rem, 3vw, 2rem);
     z-index: 1000;
-    
-    // Diseño del botón
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 50px;
-    height: 50px;
-    background-color: v.$color-secundary;
+    display: grid;
+    width: 54px;
+    height: 54px;
+    place-items: center;
+    border: 1px solid rgba(255, 255, 255, .5);
     border-radius: 50%;
+    background: v.$color-whatsapp;
+    box-shadow: 0 12px 28px rgba(8, 47, 39, .2);
     color: v.$color-white;
-    font-size: 30px;
-    box-shadow: 0 4px 15px rgba(90, 125, 74, 0.4);
-    
-    // Transiciones y animaciones
-    transition: all 0.3s ease;
-    cursor: pointer;
-    border: none;
+    font-size: 1.65rem;
+    text-decoration: none;
+    transition: transform .25s ease, background-color .25s ease, box-shadow .25s ease;
 
     &:hover {
-        background-color: v.$color-primary;
-        color: v.$color-dark;
-        transform: scale(1.1) rotate(5deg);
-        box-shadow: 0 6px 20px rgba(90, 125, 74, 0.6);
-    }
-
-    // Animación de pulso sutil para llamar la atención
-    &::after {
-        content: '';
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        border-radius: 50%;
-        border: 2px solid v.$color-salvia;
-        animation: pulse 2s infinite;
+        background: v.$color-bosque;
+        box-shadow: 0 15px 32px rgba(8, 47, 39, .25);
+        transform: translateY(-3px);
     }
 }
 
-@keyframes pulse {
-    0% { transform: scale(1); opacity: 1; }
-    50% { transform: scale(1.3); opacity: 0; }
-    100% { transform: scale(1); opacity: 0; }
+@media (max-width: 600px) {
+    main {
+        padding-top: 70px;
+    }
+
+    .whatsapp_float {
+        width: 50px;
+        height: 50px;
+        font-size: 1.5rem;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
+    *, *::before, *::after {
+        scroll-behavior: auto !important;
+        animation-duration: .01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: .01ms !important;
+    }
 }

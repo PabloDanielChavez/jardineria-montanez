@@ -8,29 +8,40 @@ $desktop: 1624px;
 $desktopXL: 1827px;
 $desktopXXL: 3000px;
 
-$color-primary: #b3d489;
-$color-primary-trans: #b3d48971;
-$color-primary-trans-int: #b3d48928;
-$color-secundary: #7ed957;
-$color-secundary-trans: #7ed95767;
-$color-bosque: #5a7d4a;          // Verde bosque (más serio y premium)
-$color-bosque-trans: #5a7d4a71;
-$color-salvia: #8ea870;        // Verde salvia suave (complemento elegante)
-$color-negro-fondo: #0d0f0c;
-$color-crema: #f2efe9;            // Mucho más sofisticado que el blanco puro
-$color-oro-mate: #b89b6f;
-$color-oro: #ffb347;
-$color-oro-dos: #f5a623;
-$color-oro-tres: #ffc125;
-$color-text: #333333;
-$color-dark: #0d0d0d;
-$color-white: #ffffff;
-$color-white-trans: #ffffff85;
-$color-white-trans-int: #ffffffc0;
-$color-light-gray: #f4f4f4;
-$color-light-gray-trans: rgba(244, 244, 244, 0.25);
-$color-light-gray-trans-int: rgba(244, 244, 244, 0.05);
+// Paleta orgánica: crema cálido, verdes profundos y acentos sobrios.
+$color-primary: #d9dfc3;
+$color-primary-trans: rgba(217, 223, 195, .55);
+$color-primary-trans-int: rgba(217, 223, 195, .2);
+$color-secundary: #3f7455;
+$color-secundary-trans: rgba(63, 116, 85, .38);
+$color-bosque: #0f4b3a;
+$color-bosque-trans: rgba(15, 75, 58, .7);
+$color-salvia: #93a58c;
+$color-negro-fondo: #082f27;
+$color-crema: #f2efe5;
+$color-oro-mate: #ad9569;
+$color-oro: #c2a963;
+$color-oro-dos: #b99c54;
+$color-oro-tres: #d4bd75;
+$color-text: #33443d;
+$color-dark: #17372d;
+$color-white: #fffdf8;
+$color-white-trans: rgba(255, 253, 248, .72);
+$color-white-trans-int: rgba(255, 253, 248, .9);
+$color-light-gray: #e4e6df;
+$color-light-gray-trans: rgba(228, 230, 223, .35);
+$color-light-gray-trans-int: rgba(228, 230, 223, .12);
+$color-paper: #faf8f2;
+$color-border: rgba(15, 75, 58, .16);
+$color-whatsapp: #28764d;
 
-$font-main: 'Inter', sans-serif;
+$font-main: Arial, Helvetica, system-ui, -apple-system, sans-serif;
+$font-heading: Georgia, 'Times New Roman', serif;
 
-$spacing-section: 80px;
+$container: 1240px;
+$container-text: 720px;
+$spacing-section: clamp(4.5rem, 8vw, 7.5rem);
+$radius-small: 10px;
+$radius-medium: 16px;
+$radius-large: 24px;
+$shadow-soft: 0 18px 45px rgba(23, 55, 45, .08);

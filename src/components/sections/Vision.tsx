@@ -2,29 +2,51 @@
 
 import styles from "@/styles/sections/vision.module.scss";
 import Image from "next/image";
+import Link from "next/link";
+import { FaWhatsapp } from "@/components/utils/Iconos";
+import { crearMensajeServicio, numeroUno } from "../utils/variables";
 
-export default function FraseMision() {
+export default function Vision() {
     return (
-        <section className={styles.vision}>
+        <section id="recuperacion" className={styles.vision}>
             <Image 
                 src="/img/fondo_vision.webp" 
-                alt="Naturaleza y espacio urbano" 
+                alt="Espacio verde rodeado de naturaleza"
                 fill
                 className={styles.vision_bg}
                 quality={75} 
                 priority={false}
             />
             <div className={styles.vision_overlay}>
-                <blockquote className={styles.vision_texto}>
-                    Nuestra <span className={styles.vision_highlight}>visión</span> es
-                    transformar jardines, parques y <span className={styles.vision_highlight}>espacios</span> <span className={styles.vision_highlight}>verdes</span>    
-                    <span> </span>en entornos que inspiren bienestar, combinando
-                    <span className={styles.vision_highlight}>jardinería</span> <span className={styles.vision_highlight}>profesional</span>,<span> </span>
-                    <span className={styles.vision_highlight}>paisajismo</span> y
-                    respeto por la <span className={styles.vision_highlight}>naturaleza</span> <span> </span>
-                    para que cada espacio alcance su mejor versión.
-                </blockquote>
+                <div className={styles.vision_contenido}>
+                    <span className={styles.vision_etiqueta}>
+                    Recuperación de espacios verdes
+                    </span>
+
+                    <h2>Volvé a disfrutar tu jardín, patio o terreno</h2>
+
+                    <p>
+                        Cuando el pasto crece demasiado, avanza la maleza o el espacio deja de usarse,
+                        revisamos qué tareas necesita para recuperarlo y dejarlo limpio, ordenado y más fácil de mantener.
+                    </p>
+
+                    <ul className={styles.vision_beneficios}>
+                        <li>Corte de pasto y desmalezado según el estado del lugar.</li>
+                        <li>Limpieza y orden para volver a usar el espacio exterior.</li>
+                        <li>Opción de mantenimiento para conservar el resultado.</li>
+                    </ul>
+
+                    <Link
+                    href={`https://wa.me/${numeroUno}?text=${crearMensajeServicio("recuperación de un jardín, patio o terreno")}`}
+                    className={styles.vision_cta}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    >
+                        <FaWhatsapp />
+                        Recuperar mi espacio
+                    </Link>
+                </div>
             </div>
         </section>
-  );
+    );
 }

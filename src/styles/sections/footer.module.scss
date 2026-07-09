@@ -2,194 +2,180 @@
 @use '../base/mixins.module.scss' as m;
 
 .footer {
-    background: linear-gradient( 180deg, #1d2419, #11150f );
-    color: v.$color-white;
-    padding: 4rem 2rem 2rem 2rem;
-
-    position: relative;
-    &::before {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: 50%;
-        transform: translateX(-50%);
-        width: 150px;
-        height: 2px;
-        background: linear-gradient(  90deg, transparent, v.$color-primary, transparent );
-    }
+    padding: clamp(4.5rem, 8vw, 7rem) clamp(1.25rem, 4vw, 2.5rem) 2rem;
+    background: v.$color-negro-fondo;
+    color: rgba(255, 253, 248, .78);
 
     &_contenedor {
-        max-width: 1200px;
-        margin: 0 auto;
         display: grid;
+        max-width: v.$container;
+        margin: 0 auto;
+        gap: 3rem 2rem;
         grid-template-columns: 1fr;
-        gap: 3rem;
 
-        @include m.tablet {
-        grid-template-columns: 1fr 1fr;
+        @include m.telefonoXXL {
+            grid-template-columns: repeat(2, 1fr);
         }
 
         @include m.tabletXL {
-        grid-template-columns: 1fr 1fr 1fr;
+            grid-template-columns: 1.15fr .8fr 1fr 1.2fr;
         }
     }
 
-    &_logo {
+    &_box_logo {
         display: flex;
+        max-width: 340px;
         flex-direction: column;
-        align-items: center;
-        gap: .2rem;
-        margin-bottom: 1.5rem;
-        justify-content: flex-start;
-        &_imagen {
-            margin-top: 1rem;
-            min-width: 200px;
-            min-height: 57px;
-        }
+        align-items: flex-start;
+        gap: 1rem;
     }
 
-    &_logo_icono {
-        filter: drop-shadow( 0 0 15px rgba(v.$color-primary,.25) );
-        color: v.$color-primary;
+    &_logo_imagen {
+        width: 200px;
+        height: auto;
+        object-fit: contain;
     }
 
-    &_logo_h2 {
-        font-size: 1.5rem;
-        font-weight: 800;
+    &_descripcion {
+        margin: .5rem 0 0;
+        color: v.$color-white;
+        font-family: v.$font-heading;
+        font-size: clamp(1.35rem, 2vw, 1.75rem);
+        line-height: 1.25;
+    }
+
+    &_microcopy {
         margin: 0;
+        color: rgba(255, 253, 248, .64);
+        font-size: .92rem;
+        line-height: 1.65;
     }
 
     &_col {
         display: flex;
         flex-direction: column;
-        align-items: center;
-        gap: 1rem;
-        @include m.tabletXL {
-            align-items: flex-start;
-        }
+        align-items: flex-start;
     }
 
-    &_GRIDCOL {
-        @include m.tablet {
-            grid-column: 1 / -1;
-        }
-        @include m.tabletXL {
-            grid-column: auto;
-        }
-    }
     &_h3 {
-        font-weight: 700;
-        text-transform: none;
-        letter-spacing: .3px;
-        font-size: 1.2rem;
-        margin-bottom: 0.1rem;
-        color: v.$color-white;
+        margin: 0 0 1.25rem;
+        color: v.$color-primary;
+        font-family: v.$font-main;
+        font-size: .76rem;
+        font-weight: 800;
+        letter-spacing: .11em;
+        text-transform: uppercase;
     }
 
     &_ul {
-        list-style: none;
-        padding: 0;
         display: flex;
-        flex-direction: column;
-        gap: 0.6rem;
-    }
-
-    &_LINK {
-        background: none;
-        border: none;
-        padding: 0;
         margin: 0;
+        padding: 0;
+        flex-direction: column;
+        gap: .7rem;
+        list-style: none;
+    }
+
+    &_li {
+        margin: 0;
+    }
+
+    &_LINK,
+    &_TEXTO {
+        display: inline-flex;
+        padding: 0;
+        align-items: flex-start;
+        gap: .45rem;
+        border: 0;
+        background: transparent;
+        color: rgba(255, 253, 248, .72);
         cursor: pointer;
-        font: inherit;
-        appearance: none;
-        -webkit-appearance: none;
-        display: inline-block;
-        &:focus {
-            outline: none;
-        }
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        gap: 0.3rem;
-        color: #bbbbbb;
+        font-size: .92rem;
+        line-height: 1.55;
+        text-align: left;
         text-decoration: none;
-        transition: color .25s ease, transform .25s ease;
-        justify-content: center;
-        font-size: 1rem;
-        @include m.tabletXL {
-            justify-content: start;
-            font-size: 1.2rem;
-        }
-        &:hover { 
-            color: v.$color-white; 
-            transform: translateX(4px);
-        }
-        &DESARROLLADOR {
-            text-decoration: none;
-            color: inherit;
-            transition: all .3s ease;
-            font-size: 1rem;
+        transition: color .2s ease;
+
+        &:hover {
+            color: v.$color-white;
         }
     }
 
-    &_contact_item {
-        display: flex;
-        align-items: center;
-        gap: 0.8rem;
-        padding: .2rem 0;
-        color: #bbbbbb;
-        font-size: 0.95rem;
+    &_LINKDESARROLLADOR {
+        color: inherit;
+        text-decoration: none;
 
-        a { color: #bbbbbb; text-decoration: none; }
+        &:hover {
+            color: v.$color-white;
+        }
+    }
+
+    &_servicio {
+        color: rgba(255, 253, 248, .68);
+        font-size: .92rem;
+        line-height: 1.5;
     }
 
     &_icono {
-        font-size: 1.2rem;
+        width: 18px;
+        height: 18px;
+        flex: 0 0 18px;
         color: v.$color-primary;
-        min-width: 20px;
     }
 
-    &_social {
-        display: flex;
-        gap: 1.5rem;
-        font-size: 2rem;
-    }
-
-    &_RED {
-        width: 48px;
-        height: 48px;
-        display: flex;
+    &_whatsapp {
+        display: inline-flex;
+        min-height: 46px;
+        margin-top: 1.5rem;
+        padding: .7rem 1.1rem;
         align-items: center;
-        justify-content: center;
-        border-radius: 50%;
-        background: rgba(255,255,255,.04); 
-        transition: transform .3s ease, background .3s ease;
+        gap: .55rem;
+        border: 1px solid v.$color-primary;
+        border-radius: 999px;
+        background: transparent;
+        color: v.$color-white;
+        font-size: .9rem;
+        font-weight: 700;
+        text-decoration: none;
+        transition: background-color .2s ease, color .2s ease;
+
         &:hover {
-            background: rgba(v.$color-primary,.15);
-            transform: translateY(-3px);
+            background: v.$color-primary;
+            color: v.$color-negro-fondo;
         }
     }
 
     &_legal {
-        margin-top: 2rem;
-        padding-top: 2rem;
-        border-top: 1px solid rgba(255,255,255,.08);
-        text-align: center;
-        font-size: 0.85rem;
-        color: v.$color-white-trans;
+        display: flex;
+        max-width: v.$container;
+        margin: clamp(3rem, 6vw, 5rem) auto 0;
+        padding-top: 1.5rem;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        gap: .75rem 2rem;
+        border-top: 1px solid rgba(255, 255, 255, .16);
+    }
+
+    &_copy_p {
+        margin: 0;
+        color: rgba(255, 253, 248, .54);
+        font-size: .78rem;
+        line-height: 1.6;
+    }
+
+    .destacadoPrimary {
+        color: rgba(255, 253, 248, .82);
     }
 
     .destacadoDorado {
         color: v.$color-oro;
-        font-weight: 700; // Asegúrate de que tenga buen grosor
-        letter-spacing: 0.5px; // Un poco de espacio lo hace ver más profesional
-        text-shadow: 0px 0px 8px rgba(245, 166, 35, 0.3); // Un sutil resplandor
     }
-    
-    .destacadoPrimary {
-        color: v.$color-primary;
-        font-weight: 700;
-        letter-spacing: 0.5px; // Un poco de espacio lo hace ver más profesional
-        text-shadow: 0px 0px 8px rgba(161, 35, 245, 0.3); // Un sutil resplandor
+}
+
+@media (max-width: 600px) {
+    .footer {
+        &_legal {
+            flex-direction: column;
+        }
     }
 }

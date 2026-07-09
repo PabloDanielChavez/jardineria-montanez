@@ -10,7 +10,8 @@ export default function btnWSP() {
             className={`whatsapp_float`} // Usa el módulo de estilos
             target="_blank" 
             rel="noopener noreferrer"
-            aria-label="Contactar por WhatsApp"
+            aria-label="Pedir presupuesto por WhatsApp"
+            title="Pedir presupuesto por WhatsApp"
         >
             <FaWhatsapp />
         </Link>

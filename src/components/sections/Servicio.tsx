@@ -1,72 +1,88 @@
 "use client";
 
 import styles from "@/styles/sections/servicios.module.scss";
-import { GiBroom, GiGardeningShears, GiHighGrass, GiTreeGrowth, GiWateringCan,  } from "@/components/utils/Iconos";
+import { GiBroom, GiGardeningShears, GiHighGrass, GiTreeGrowth, FaWhatsapp } from "@/components/utils/Iconos";
 import Image from "next/image";
-
+import Link from "next/link";
+import { crearMensajeServicio, numeroUno } from "../utils/variables";
 
 export default function Servicios() {
-
     const servicios = [
-        {
-            nombre: "Mantenimiento de Jardines",
-            texto: "Poda, desmalezado, limpieza y cuidado de jardines para mantener espacios verdes saludables, ordenados y con una apariencia impecable durante todo el año.",
-            icono: <GiGardeningShears className={styles.servicios_icono}/>,
-            img: "/img/jardinero.webp"
-        },
-        {
-            nombre: "Sistemas de Riego",
-            texto: "Instalación, reparación y optimización de sistemas de riego para favorecer el crecimiento de plantas, jardines y espacios verdes utilizando el agua de forma eficiente.",
-            icono: <GiWateringCan className={styles.servicios_icono}/>,
-            img: "/img/jardinero_regando.webp"
-        },
-        {
-            nombre: "Limpieza de Terrenos y Exteriores",
-            texto: "Realizamos limpieza de terrenos, patios, veredas y espacios exteriores, retirando hojas, residuos y maleza para recuperar el orden y la estética del lugar.",
-            icono: <GiBroom className={styles.servicios_icono}/>,
-            img: "/img/jardinero_limpiando.webp"
-        },
-        {
-            nombre: "Poda de Árboles",
-            texto: "Servicio de poda de árboles y arbustos para mejorar la seguridad, favorecer un crecimiento saludable y mantener la estética de jardines y espacios verdes..",
-            icono: <GiTreeGrowth className={styles.servicios_icono}/>,
-            img: "/img/jardinero_talando.webp"
-        },
-        {
-            nombre: "Corte de Césped",
-            texto: "Servicio de corte de césped y mantenimiento de áreas verdes para conservar jardines prolijos, saludables y listos para disfrutar durante todo el año.",
-            icono: <GiHighGrass className={styles.servicios_icono}/>,
-            img: "/img/jardinero_cortando.webp"
-        }
+    {
+        nombre: "Corte de pasto",
+        texto: "Cortamos y emparejamos el pasto para que tu jardín, patio o frente se vea limpio, prolijo y cuidado.",
+        consulta: "corte de pasto",
+        icono: <GiHighGrass className={styles.servicios_icono} />,
+        img: "/img/jardinero_cortando.webp",
+    },
+    {
+        nombre: "Poda de árboles y arbustos",
+        texto: "Ordenamos árboles y arbustos según el estado del espacio, buscando más prolijidad, seguridad y mejor circulación.",
+        consulta: "poda de árboles y arbustos",
+        icono: <GiTreeGrowth className={styles.servicios_icono} />,
+        img: "/img/jardinero_talando.webp",
+    },
+    {
+        nombre: "Desmalezado y limpieza de terrenos",
+        texto: "Retiramos maleza, pasto alto y acumulación de residuos verdes para recuperar el acceso y el orden del lugar.",
+        consulta: "desmalezado y limpieza de terreno",
+        icono: <GiBroom className={styles.servicios_icono} />,
+        img: "/img/jardinero_limpiando.webp",
+    },
+    {
+        nombre: "Mantenimiento de jardines",
+        texto: "Realizamos tareas periódicas para conservar jardines, patios y espacios verdes limpios, cuidados y fáciles de disfrutar.",
+        consulta: "mantenimiento de jardín",
+        icono: <GiGardeningShears className={styles.servicios_icono} />,
+        img: "/img/jardinero.webp",
+    },
+    {
+        nombre: "Recuperación de espacios verdes",
+        texto: "Trabajamos sobre jardines, patios o terrenos descuidados combinando corte, poda, limpieza y desmalezado según el caso.",
+        consulta: "recuperación de espacio verde",
+        icono: <GiBroom className={styles.servicios_icono} />,
+        img: "/img/jardinero_trabajando_grande.webp",
+    },
+];
 
-    ];
     return (
-        <section className={styles.servicios}>
+        <section id="servicios" className={styles.servicios}>
             <div  className={styles.servicios_presentacion}>
-                <h2 className={styles.servicios_titulo}>Servicios de Jardinería y Mantenimiento</h2>
-                <p className={styles.servicios_subtitulo}>Más de 2 años brindando servicios de jardinería, mantenimiento de jardines y cuidado de espacios verdes.</p>
+                <h2 className={styles.servicios_titulo}>Servicios de jardinería y mantenimiento</h2>
+                <p className={styles.servicios_subtitulo}>Corte de pasto, poda, desmalezado, limpieza de terrenos y recuperación de espacios verdes para casas, quintas, comercios y patios.</p>
             </div>
             <div className={styles.servicios_layout}>
                 <div className={styles.servicios_container_principal}>
                 {servicios.map((item, index) => (
-                    <div key={index} className={styles.servicios_item}>
-                    <Image 
-                        src={item.img} 
-                        alt={item.nombre}
-                        fill
-                        sizes="(max-width: 768px) 100vw, 300px"
-                        className={styles.servicios_imagen}
-                        loading="lazy"
-                        quality={75}
-                    />
+                    <article key={index} className={styles.servicios_item}>
+                    <div className={styles.servicios_media}>
+                        <Image
+                            src={item.img}
+                            alt={item.nombre}
+                            fill
+                            sizes="(max-width: 768px) 100vw, (max-width: 1218px) 50vw, 33vw"
+                            className={styles.servicios_imagen}
+                            loading="lazy"
+                            quality={78}
+                        />
+                    </div>
                     <div className={styles.servicios_overlay}>
                         <div className={styles.servicios_icono_box}>{item.icono}</div>
                         <div className={styles.servicios_contenido}>
                             <h3 className={styles.servicios_heading}>{item.nombre}</h3>
                             <p className={styles.servicios_texto}>{item.texto}</p>
+                            <Link
+                                href={`https://wa.me/${numeroUno}?text=${crearMensajeServicio(item.consulta)}`}
+                                className={styles.servicios_cta}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
+                                <FaWhatsapp />
+                                Consultar
+                            </Link>
                         </div>
                     </div>
-                    </div>
+                    </article>
                 ))}
                 </div>
             </div>

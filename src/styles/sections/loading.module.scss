@@ -1,184 +1,79 @@
 @use "../base/variables.module.scss" as v;
 
 .loadingContainer {
-  position: fixed;
-  inset: 0;
-
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 2rem;
-
-  background:
-    radial-gradient(
-      circle,
-      rgba(v.$color-primary, 0.15) 0%,
-      v.$color-crema 85%
-    );
-
-  z-index: 9999;
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1.25rem;
+    background: v.$color-crema;
 }
 
-.glow {
-  position: absolute;
-
-  width: 250px;
-  height: 250px;
-
-  border-radius: 50%;
-
-  background: v.$color-primary-trans;
-
-  filter: blur(80px);
-
-  animation: glowPulse 4s ease-in-out infinite;
+.glow,
+.leaf {
+    display: none;
 }
 
 .gardenLoader {
-  position: relative;
+    position: relative;
+    display: grid;
+    width: 92px;
+    height: 92px;
+    place-items: center;
+    border: 1px solid v.$color-border;
+    border-radius: 50%;
 
-  width: 120px;
-  height: 120px;
-
-  display: flex;
-  justify-content: center;
-  align-items: center;
+    &::after {
+        content: "";
+        position: absolute;
+        inset: -1px;
+        border: 2px solid transparent;
+        border-top-color: v.$color-bosque;
+        border-radius: inherit;
+        animation: loadingRotate 1.3s linear infinite;
+    }
 }
 
 .plantIcon {
-  font-size: 5rem;
-
-  color: v.$color-bosque;
-
-  z-index: 2;
-
-  animation:
-    float 3s ease-in-out infinite,
-    grow 2s ease-in-out infinite;
-}
-
-.leaf {
-  position: absolute;
-
-  width: 18px;
-  height: 18px;
-
-  background: v.$color-secundary;
-
-  border-radius: 0 100% 0 100%;
-
-  opacity: 0;
-}
-
-.leaf1 {
-  animation: leafOrbit 2s infinite;
-}
-
-.leaf2 {
-  animation: leafOrbit 2s infinite .5s;
-}
-
-.leaf3 {
-  animation: leafOrbit 2s infinite 1s;
-}
-
-.leaf4 {
-  animation: leafOrbit 2s infinite 1.5s;
+    color: v.$color-bosque;
+    font-size: 2.9rem;
 }
 
 .loadingText {
-  font-family: v.$font-main;
-  font-size: 1rem;
-  font-weight: 600;
-
-  color: v.$color-bosque;
-
-  letter-spacing: 1px;
+    color: v.$color-dark;
+    font-family: v.$font-heading;
+    font-size: 1rem;
 }
 
 .dots::after {
-  content: "";
-  animation: dots 1.5s infinite;
-}
-
-@keyframes float {
-  0%,100% {
-    transform: translateY(0);
-  }
-
-  50% {
-    transform: translateY(-8px);
-  }
-}
-
-@keyframes grow {
-  0%,100% {
-    scale: 1;
-  }
-
-  50% {
-    scale: 1.08;
-  }
-}
-
-@keyframes leafOrbit {
-  0% {
-    transform:
-      rotate(0deg)
-      translateX(45px)
-      scale(0);
-
-    opacity: 0;
-  }
-
-  20% {
-    opacity: 1;
-  }
-
-  50% {
-    transform:
-      rotate(180deg)
-      translateX(45px)
-      scale(1);
-  }
-
-  100% {
-    transform:
-      rotate(360deg)
-      translateX(45px)
-      scale(0);
-
-    opacity: 0;
-  }
-}
-
-@keyframes glowPulse {
-  0%,100% {
-    scale: 1;
-    opacity: .5;
-  }
-
-  50% {
-    scale: 1.2;
-    opacity: .8;
-  }
-}
-
-@keyframes dots {
-  0% {
     content: "";
-  }
+    animation: loadingDots 1.5s steps(4, end) infinite;
+}
 
-  33% {
-    content: ".";
-  }
+@keyframes loadingRotate {
+    to {
+        transform: rotate(360deg);
+    }
+}
 
-  66% {
-    content: "..";
-  }
+@keyframes loadingDots {
+    0% {
+        content: "";
+    }
 
-  100% {
-    content: "...";
-  }
+    25% {
+        content: ".";
+    }
+
+    50% {
+        content: "..";
+    }
+
+    75%,
+    100% {
+        content: "...";
+    }
 }

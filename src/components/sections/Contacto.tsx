@@ -6,23 +6,25 @@ import { FaWhatsapp} from "../utils/Iconos";
 
 export default function Contacto() {
     return (
-        <section className={styles.contacto}>
+        <section id="contacto" className={styles.contacto}>
             <div className={styles.contacto_container}>
                 <div>
                     <h2 className={styles.contacto_titulo}>
-                        ¿Necesitás un presupuesto para servicios de jardinería?
+                        ¿Querés dejar tu jardín, patio o terreno más prolijo?
                     </h2>
                     <p className={styles.contacto_subtitulo}>
-                        Brindamos asesoramiento y presupuestos sin compromiso para mantenimiento de jardines,
-                        corte de césped, poda de árboles, limpieza de terrenos y cuidado de espacios verdes.
+                        Podemos ayudarte a ordenar, limpiar o mantener tu jardín, patio o terreno para que vuelva a ser un espacio más cómodo y agradable.
                     </p>
+                    <p className={styles.contacto_microcopy}>Atención: lunes a sábado, de 9 a 19 h.</p>
                 </div>
                 <Link
                     href={`https://wa.me/${numeroUno}?text=${mensajePresupuesto}`}
                     className={styles.contacto_boton}
+                    target="_blank"
+                    rel="noopener noreferrer"
                 >
                     <FaWhatsapp />
-                    Solicitar Presupuesto
+                    Dejarlo prolijo
                 </Link>
             </div>
         </section>

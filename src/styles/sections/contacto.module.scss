@@ -1,92 +1,74 @@
-@use "sass:color";
 @use '../base/variables.module.scss' as v;
 @use '../base/mixins.module.scss' as m;
 
 .contacto {
-    width: 100%;
-    background: linear-gradient(135deg, v.$color-bosque, color.adjust(v.$color-bosque));
-    padding: 3rem 2rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-
-    &::before {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: 50%;
-        transform: translateX(-50%);
-        width: 150px;
-        height: 2px;
-        background: linear-gradient( 90deg, transparent, rgba(255,255,255,.4), transparent );
-    }
+    padding: clamp(4rem, 7vw, 6.5rem) clamp(1.25rem, 4vw, 2.5rem);
+    background: v.$color-primary;
 
     &_container {
-        width: 100%;
-        max-width: 1200px;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
+        display: grid;
+        max-width: v.$container;
+        margin: 0 auto;
         gap: 2rem;
 
-        background:rgba(255,255,255,.04);
-        border: 1px solid rgba(255,255,255,.08);
-        backdrop-filter: blur(10px);
-        border-radius: 24px;
-        padding: 3rem;
-        box-shadow: 0 20px 60px rgba(0,0,0,.15);
-        @include m.tabletXL {
-            flex-direction: row; 
-            justify-content: space-between;
-            gap: 4rem;
+        @include m.tablet {
+            grid-template-columns: minmax(0, 1fr) auto;
+            align-items: end;
         }
     }
 
     &_titulo {
-        color: v.$color-white;
-        font-size: clamp(
-            1.8rem,
-            4vw,
-            3rem
-        );
-        line-height: 1.2;
-        max-width: 700px;
-        font-weight: 800;
-        
-        @include m.tabletXL {
-            font-size: 1.8rem;
-            text-align: left;
-        }
+        max-width: 850px;
+        margin: 0 0 1.2rem;
+        color: v.$color-dark;
+        font-family: v.$font-heading;
+        font-size: clamp(3rem, 5.4vw, 4.0rem);
+        font-weight: 500;
+        letter-spacing: -.055em;
+        line-height: .98;
     }
 
     &_subtitulo {
-        color: rgba(255,255,255,.8);
-        font-size: 1.1rem;
-        max-width: 550px;
-        margin-top: 1rem;
+        max-width: 700px;
+        margin: 0;
+        color: v.$color-text;
+        font-size: clamp(1rem, 1.5vw, 1.15rem);
+        line-height: 1.7;
+    }
+
+    &_microcopy {
+        margin: 1rem 0 0;
+        color: v.$color-bosque;
+        font-size: .9rem;
+        font-weight: 700;
     }
 
     &_boton {
-        background: v.$color-primary;
-        color: v.$color-dark;
-        padding: 1rem 2rem;
+        display: inline-flex;
+        min-height: 54px;
+        padding: .9rem 1.4rem;
+        align-items: center;
+        justify-content: center;
+        gap: .65rem;
+        border: 1px solid v.$color-bosque;
         border-radius: 999px;
+        background: v.$color-bosque;
+        color: v.$color-white;
+        font-size: .95rem;
         font-weight: 700;
-        transition: transform .3s ease, box-shadow .3s ease;
-        box-shadow:0 10px 30px rgba(0,0,0,.15);
         text-decoration: none;
         white-space: nowrap;
-        display: inline-flex;
-        align-items: center;
-        gap: .8rem;
-
+        transition: background-color .2s ease, transform .2s ease;
 
         &:hover {
-            transform: translateY(-3px);
-
-            box-shadow:
-                0 15px 40px rgba(0,0,0,.25);
+            background: v.$color-negro-fondo;
+            transform: translateY(-2px);
         }
+    }
+}
+
+@media (max-width: 973px) {
+    .contacto_boton {
+        width: 100%;
     }
 }

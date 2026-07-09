@@ -2,194 +2,166 @@
 @use '../base/mixins.module.scss' as m;
 
 .servicios {
-    padding:1rem 2rem 5rem 2rem;
-    background: linear-gradient( 180deg, v.$color-crema 0%, v.$color-white 100% );
-
-    &_layout {
-        display: grid;
-        grid-template-columns: repeat( auto-fit, minmax(320px, 1fr) );
-        gap: 2rem;
-        margin: 0 auto;
-    }
+    padding: v.$spacing-section clamp(1.25rem, 4vw, 2.5rem);
+    background: v.$color-white;
 
     &_presentacion {
-        text-align: center;
-        margin: 4rem 0;
-        padding: 0 1rem;
+        display: flex;
+        flex-direction: column;
+        max-width: v.$container;
+        margin: 0 auto clamp(2.75rem, 5vw, 4.5rem);
+        gap: 1rem;
     }
 
     &_titulo {
-        font-size: 2.5rem;
-        font-weight: 800;
-        color: #1a202c;
-        letter-spacing: -0.025em;
-        margin: 0 0 1rem 0;
-        &::after {
-            content: "";
-            display: block;
-            width: 60px;
-            height: 4px;
-            background: v.$color-secundary;
-            margin: 1rem auto 0;
-            border-radius: 2px;
-        }
+        max-width: 720px;
+        margin: 0;
+        color: v.$color-dark;
+        font-family: v.$font-heading;
+        font-size: clamp(3rem, 5.4vw, 4.0rem);
+        font-weight: 500;
+        letter-spacing: -.05em;
+        line-height: 1;
     }
 
     &_subtitulo {
-        font-size: 1.4rem;
+        max-width: 540px;
+        margin: 0;
         color: v.$color-text;
-        font-weight: 400;
-        max-width: 600px;
-        margin: 0 auto 4rem auto;
+        font-size: clamp(1rem, 1.5vw, 1.15rem);
+        line-height: 1.7;
+    }
+
+    &_layout {
+        max-width: v.$container;
+        margin: 0 auto;
     }
 
     &_container_principal {
         display: grid;
-        grid-template-columns: repeat(1, 1fr);
-        align-items: stretch;
-        justify-content: center;
-        flex-wrap: wrap;       
-        gap: 30px;
-        width: 100%;
+        grid-template-columns: 1fr;
+        gap: 1.25rem;
+
         @include m.telefonoXXL {
             grid-template-columns: repeat(2, 1fr);
         }
+
         @include m.tabletXL {
             grid-template-columns: repeat(3, 1fr);
-        }
-        
-        @include m.desktop {
-            display: flex;
-            align-items: stretch;
-            justify-content: center;
-            flex-direction: row;
-            flex-wrap: nowrap;
+            gap: 1.5rem;
         }
     }
 
     &_item {
-
-        &:hover {
-            
-            transform: translateY(-4px);
-            box-shadow: 0 25px 50px rgba(0,0,0,.15); border-color: v.$color-secundary;
-
-        }
-    }
-
-    &_item {
-        position: relative;
-        aspect-ratio: 4 / 5;
-        background-size: cover;
-        background-position: center;
-        border-radius: 16px;
+        display: flex;
+        min-width: 0;
         overflow: hidden;
-        border: 2px solid rgba(255,255,255,.15);
-        box-shadow:
-            0 10px 30px rgba(0,0,0,.15);
-        transition:
-            transform .35s ease,
-            box-shadow .35s ease,
-            border-color .35s ease;
-        cursor: pointer;
-        &::after {
-            content: "";
-            position: absolute;
-            inset: 0;
-            background:
-                linear-gradient(
-                    to top,
-                    rgba(13,15,12,.85),
-                    rgba(13,15,12,.25)
-                );
-            transition: .35s ease;
-        }
-        &::after {
-            z-index: 1;
-        }
+        flex-direction: column;
+        border: 1px solid v.$color-border;
+        border-radius: v.$radius-medium;
+        background: v.$color-paper;
+        transition: border-color .25s ease, transform .25s ease;
 
         &:hover {
-            transform: translateY(-6px);
-            border-color: rgba(v.$color-primary,.4);
-            box-shadow:
-                0 25px 50px rgba(0,0,0,.18),
-                0 0 25px rgba(v.$color-primary,.12);
-            &::after {
-                background:
-                    linear-gradient(
-                        to top,
-                        rgba(13,15,12,.75),
-                        rgba(13,15,12,.15)
-                    );
-            }
-            
+            border-color: rgba(v.$color-bosque, .36);
+            transform: translateY(-3px);
         }
-        &:hover &_imagen {
-            transform: scale(1.05);
-        }
+    }
+
+    &_media {
+        position: relative;
+        width: 100%;
+        aspect-ratio: 4 / 3;
+        overflow: hidden;
+        background: v.$color-primary-trans-int;
     }
 
     &_imagen {
         object-fit: cover;
-        transition: transform .6s ease;
+        transition: transform .5s ease;
+    }
+
+    &_item:hover &_imagen {
+        transform: scale(1.025);
     }
 
     &_overlay {
-        position: relative;
-        z-index: 2;
-        opacity: 1;
-        transition: opacity 0.4s ease;
-        display: flex;
-        flex-direction: column;
-        justify-content: flex-end;
-        align-items: flex-start;
-        text-align: left;
-        padding: 2rem;
+        display: grid;
+        flex: 1;
+        padding: clamp(1.25rem, 2.5vw, 1.75rem);
+        grid-template-columns: 42px 1fr;
         gap: 1rem;
-        height: 100%;
+        background: v.$color-paper;
     }
 
     &_contenido {
-        width: 100%; 
+        display: flex;
+        min-width: 0;
+        flex-direction: column;
+        align-items: flex-start;
     }
-    
+
     &_heading {
-        font-size: 1.3rem;
+        margin: 0 0 .7rem;
+        color: v.$color-dark;
+        font-family: v.$font-heading;
+        font-size: clamp(1.35rem, 2vw, 1.7rem);
+        font-weight: 500;
+        letter-spacing: -.02em;
+        line-height: 1.15;
+    }
+
+    &_texto {
+        margin: 0 0 1.25rem;
+        color: v.$color-text;
+        font-size: .98rem;
+        line-height: 1.65;
+    }
+
+    &_icono_box {
+        display: grid;
+        width: 42px;
+        height: 42px;
+        place-items: center;
+        border: 1px solid v.$color-border;
+        border-radius: 50%;
+        color: v.$color-bosque;
+    }
+
+    &_icono {
+        width: 22px;
+        height: 22px;
+    }
+
+    &_cta {
+        display: inline-flex;
+        margin-top: auto;
+        padding-bottom: .2rem;
+        align-items: center;
+        gap: .5rem;
+        border-bottom: 1px solid currentColor;
+        color: v.$color-bosque;
+        font-size: .9rem;
         font-weight: 700;
-        color: v.$color-white;
-        position: relative;
-        padding-bottom: .8rem;
-        &::after {
-            content: "";
-            position: absolute;
-            left: 0;
-            bottom: 0;
-            width: 50px;
-            height: 3px;
-            border-radius: 20px;
-            background: v.$color-primary;
+        text-decoration: none;
+        transition: color .2s ease, gap .2s ease;
+
+        &:hover {
+            gap: .7rem;
+            color: v.$color-negro-fondo;
         }
     }
-    
-    &_texto {
-        color: rgba(255,255,255,.85);
-        font-size: 0.85rem;
-        line-height: 1.6;
-        font-weight: 400;
-    }
-    
-    &_icono {
-        width: 60px;
-        height: 60px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        border-radius: 16px;
-        background: rgba(255,255,255,.1);
-        backdrop-filter: blur(8px);
-        border: 1px solid rgba(255,255,255,.15);
-        color: v.$color-primary;
-        font-size: 2.5rem;
-        padding: .1rem;
+}
+
+@media (max-width: 480px) {
+    .servicios {
+        &_overlay {
+            grid-template-columns: 1fr;
+        }
+
+        &_icono_box {
+            width: 38px;
+            height: 38px;
+        }
     }
 }
