@@ -38,6 +38,10 @@
         grid-template-columns: 1fr;
         gap: 1rem;
 
+        @media (min-width: 700px) {
+            grid-template-columns: repeat(2, 1fr);
+        }
+
         @include m.telefonoXXL {
             grid-template-columns: repeat(2, 1fr);
         }
@@ -52,7 +56,7 @@
         position: relative;
         display: block;
         width: 100%;
-        max-height: 280px;
+        height: clamp(240px, 72vw, 300px);
         padding: 0;
         overflow: hidden;
         border: 0;
@@ -62,23 +66,32 @@
         text-align: left;
 
         &:first-child {
-            min-height: 420px;
+            height: clamp(280px, 84vw, 360px);
+        }
+
+        @media (min-width: 700px) {
+            height: 280px;
+
+            &:first-child {
+                height: 380px;
+                grid-column: span 2;
+            }
         }
 
         @include m.telefonoXXL {
-            max-height: 340px;
+            height: 300px;
 
             &:first-child {
-                min-height: 440px;
+                height: 400px;
                 grid-column: span 2;
             }
         }
 
         @include m.tabletXL {
-            max-height: 360px;
+            height: 320px;
 
             &:first-child {
-                min-height: 740px;
+                height: 660px;
                 grid-row: span 2;
                 grid-column: span 2;
             }
@@ -266,10 +279,10 @@
 @media (max-width: 600px) {
     .galeria {
         &_card {
-            min-height: 300px;
+            height: 240px;
 
             &:first-child {
-                min-height: 360px;
+                height: 300px;
             }
         }
 

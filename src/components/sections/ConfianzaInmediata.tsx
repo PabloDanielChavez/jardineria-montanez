@@ -1,6 +1,6 @@
 import styles from "@/styles/sections/confianza.module.scss";
 import { FaWhatsapp } from "@/components/utils/Iconos";
-import { MdLocationOn, MdPhotoLibrary, MdOutlineAssignment, MdTune } from "react-icons/md";
+import { MdLocationOn, MdOutlineAssignment, MdTune } from "react-icons/md";
 
 const señales = [
     {

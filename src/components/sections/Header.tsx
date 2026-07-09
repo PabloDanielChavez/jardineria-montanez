@@ -2,10 +2,10 @@
 
 import { useState, useEffect } from 'react';
 import styles from '@/styles/sections/header.module.scss';
-import { BiBriefcase, BiEnvelope, BiHelpCircle, BiHomeAlt2, BiMenu, BiTargetLock, FaWhatsapp } from "@/components/utils/Iconos";
+import { BiBriefcase, BiEnvelope, BiHelpCircle, BiHomeAlt2, BiMenu, BiTargetLock } from "@/components/utils/Iconos";
 import Image from 'next/image';
 import Link from 'next/link';
-import { mensajePresupuesto, numeroUno } from '../utils/variables';
+import { numeroUno } from '../utils/variables';
 import { MdPhone } from 'react-icons/md';
 
 export default function Header() {
@@ -78,7 +78,7 @@ export default function Header() {
                 </nav>
                 <div className={styles.header_actions}>
                     <Link
-                        href={`https://wa.me/${numeroUno}?text=${mensajePresupuesto}`}
+                        href={`tel:${numeroUno}`}
                         className={styles.header_cta}
                         target="_blank"
                         rel="noopener noreferrer"

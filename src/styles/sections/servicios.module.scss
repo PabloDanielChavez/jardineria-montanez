@@ -42,6 +42,10 @@
         grid-template-columns: 1fr;
         gap: 1.25rem;
 
+        @media (min-width: 700px) {
+            grid-template-columns: repeat(2, 1fr);
+        }
+
         @include m.telefonoXXL {
             grid-template-columns: repeat(2, 1fr);
         }
@@ -71,7 +75,7 @@
     &_media {
         position: relative;
         width: 100%;
-        aspect-ratio: 4 / 3;
+        aspect-ratio: 16 / 10;
         overflow: hidden;
         background: v.$color-primary-trans-int;
     }

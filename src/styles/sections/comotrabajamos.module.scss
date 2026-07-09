@@ -34,6 +34,10 @@
         grid-template-columns: 1fr;
         border-top: 1px solid v.$color-border;
 
+        @media (min-width: 700px) {
+            grid-template-columns: repeat(2, 1fr);
+        }
+
         @include m.telefonoXXL {
             grid-template-columns: repeat(2, 1fr);
         }
@@ -55,6 +59,16 @@
         flex-direction: column;
         align-items: flex-start;
         border-bottom: 1px solid v.$color-border;
+
+        @media (min-width: 700px) and (max-width: 1217px) {
+            min-height: 220px;
+            padding-left: 1.25rem;
+            border-right: 1px solid v.$color-border;
+
+            &:nth-child(odd) {
+                padding-left: 0;
+            }
+        }
 
         @include m.telefonoXXL {
             padding-left: 1.25rem;

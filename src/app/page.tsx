@@ -106,14 +106,14 @@ export default function Home() {
         <Bienvenida /> {/* Objetivo: que el usuario entienda en 5 segundos qué hacen, dónde trabajan y qué beneficio obtiene. “¿Esto es para mí?”, “¿Trabajan en mi zona?”, “¿Puedo consultar fácil?” */}
         <ConfianzaInmediata /> {/* Objetivo: Bajar dudas rápidas antes de que el usuario siga bajando.*/}
         <Servicio /> {/* Objetivo: mostrar claramente qué servicios ofrecen y captar búsquedas SEO específicas.*/}
+        <Vision /> {/* Objetivo: conectar emocionalmente con el valor del jardín. Esta sección sirve si no es demasiado institucional. No debería hablar solo de “nuestra visión” como empresa. Debería hablar del resultado para el cliente. */}
         <Galeria /> {/* Objetivo: mostrar claramente qué servicios ofrecen y captar búsquedas SEO específicas. Acá entran las keywords fuertes: Corte de pasto, Poda, Desmalezado, Limpieza de terrenos,Mantenimiento de jardines, Recuperación de espacios verdes*/}
+        <Contacto />
         <Mantenimiento /> {/* Objetivo: demostrar con imágenes que el servicio existe y que el resultado se ve. Esta sección es clave para conversión. En jardinería, la prueba visual vende mucho. */}
         <ComoTrabajamos /> {/* Objetivo: convertir una consulta puntual en un servicio más estable o recurrente. */}
-        <Vision /> {/* Objetivo: conectar emocionalmente con el valor del jardín. Esta sección sirve si no es demasiado institucional. No debería hablar solo de “nuestra visión” como empresa. Debería hablar del resultado para el cliente. */}
         <Sobre /> {/* Objetivo: humildad y generar confianza. Acá la persona tiene que sentir que no está hablando con una empresa fría, sino con alguien real. Pero cuidado: no inventar años, experiencia, garantías ni frases tipo “líderes en Buenos Aires”. */}
         <Testimonios />
         <PreguntasFrecuentes />
-        <Contacto />
         <BtnWSP />
     </>
   );
