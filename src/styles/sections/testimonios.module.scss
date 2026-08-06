@@ -1,63 +1,531 @@
-@use '../base/variables.module.scss' as v;
+@use "sass:color";
+@use "../base/variables.module.scss" as v;
 
 .testimonios {
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
     padding: v.$spacing-section clamp(1.25rem, 4vw, 2.5rem);
-    background: v.$color-paper;
+    &::before {
+        position: absolute;
+        z-index: -1;
+        right: -8rem;
+        bottom: -12rem;
+        width: 31rem;
+        height: 31rem;
+        border: 1px solid color.change(v.$color-dark, $alpha: 0.055);
+        border-radius: 50%;
+        content: "";
+        pointer-events: none;
+    }
 
-    &_header,
-    &_grid {
-        max-width: v.$container;
-        margin-right: auto;
-        margin-left: auto;
+    &_decoracion {
+        position: absolute;
+        z-index: -1;
+        top: clamp(2rem, 4vw, 4.5rem);
+        right: clamp(-2rem, 1vw, 1rem);
+        width: clamp(10rem, 19vw, 18rem);
+        height: clamp(12rem, 23vw, 22rem);
+        color: color.change(v.$color-dark, $alpha: 0.075);
+        pointer-events: none;
+
+        svg {
+            position: absolute;
+            width: clamp(5rem, 10vw, 9.5rem);
+            height: auto;
+            transform-origin: center;
+        }
+
+        svg:nth-child(1) {
+            top: 0;
+            right: 0;
+            transform: rotate(-24deg);
+        }
+
+        svg:nth-child(2) {
+            top: 28%;
+            left: 3%;
+            transform: rotate(22deg) scale(0.8);
+        }
+
+        svg:nth-child(3) {
+            right: 12%;
+            bottom: 0;
+            transform: rotate(-48deg) scale(0.66);
+        }
+    }
+
+    &_contenedor {
+        width: min(100%, v.$container);
+        margin-inline: auto;
     }
 
     &_header {
-        margin-bottom: 3rem;
+        display: grid;
+        gap: clamp(2rem, 5vw, 4.5rem);
+        align-items: end;
+        margin-bottom: clamp(3rem, 6vw, 5rem);
+    }
 
-        h2 {
-            margin-bottom: 1rem;
-            color: v.$color-dark;
-            font-family: v.$font-heading;
-            font-size: clamp(2.7rem, 5vw, 5rem);
-            font-weight: 500;
-            letter-spacing: -.05em;
-            line-height: 1;
+    &_intro {
+        display: grid;
+        gap: 1.35rem;
+    }
+
+    &_etiqueta {
+        display: inline-flex;
+        width: fit-content;
+        align-items: center;
+        gap: 0.75rem;
+        color: color.change(v.$color-dark, $alpha: 0.76);
+        font-size: clamp(0.7rem, 1vw, 0.8rem);
+        font-weight: 800;
+        letter-spacing: 0.16em;
+        line-height: 1.2;
+        text-transform: uppercase;
+
+        &::after {
+            width: 2rem;
+            height: 1px;
+            background: currentcolor;
+            content: "";
+            opacity: 0.55;
         }
 
-        p {
-            max-width: 620px;
+        svg {
+            width: 1rem;
+            height: 1rem;
+            color: color.change(v.$color-dark, $alpha: 0.6);
+            transform: rotate(-18deg);
+        }
+    }
+
+    h2 {
+        display: grid;
+        max-width: 57rem;
+        margin: 0;
+        color: v.$color-dark;
+        font-family: v.$font-heading;
+        font-size: clamp(2.8rem, 5.4vw, 5.4rem);
+        font-weight: 500;
+        letter-spacing: -0.052em;
+        line-height: 0.94;
+        text-wrap: balance;
+
+        span:last-child {
+            position: relative;
+            width: fit-content;
+
+            &::after {
+                position: absolute;
+                right: -1.65rem;
+                bottom: 0.35rem;
+                width: 0.9rem;
+                height: 0.9rem;
+                border-radius: 70% 0 70% 0;
+                background: color.change(v.$color-dark, $alpha: 0.58);
+                content: "";
+                transform: rotate(28deg);
+            }
+        }
+    }
+
+    &_resumen {
+        display: grid;
+        gap: 1.5rem;
+        max-width: 38rem;
+
+        > p {
             margin: 0;
             color: v.$color-text;
-            line-height: 1.7;
+            font-size: clamp(1rem, 1.35vw, 1.08rem);
+            line-height: 1.75;
+            text-wrap: pretty;
+
+            strong {
+                color: v.$color-dark;
+                font-family: v.$font-heading;
+                font-weight: 650;
+            }
         }
+    }
+
+    &_indicadores {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.7rem;
+    }
+
+    &_indicador {
+        display: inline-flex;
+        min-height: 2.75rem;
+        align-items: center;
+        justify-content: center;
+        gap: 0.55rem;
+        padding: 0.65rem 0.95rem;
+        border: 1px solid color.change(v.$color-dark, $alpha: 0.14);
+        border-radius: 999px;
+        background: color.change(v.$color-white, $alpha: 0.58);
+        color: color.change(v.$color-dark, $alpha: 0.84);
+        box-shadow: 0 0.4rem 1.5rem color.change(v.$color-dark, $alpha: 0.025);
+        font-size: 0.8rem;
+        font-weight: 750;
+        line-height: 1;
+        text-decoration: none;
+
+        > svg {
+            width: 0.95rem;
+            height: 0.95rem;
+            flex: 0 0 auto;
+            color: color.change(v.$color-dark, $alpha: 0.76);
+        }
+    }
+
+    &_indicador_google {
+        transition:
+            border-color 200ms ease,
+            background-color 200ms ease,
+            transform 200ms ease;
+
+        > svg:first-child {
+            width: 1.05rem;
+            height: 1.05rem;
+        }
+
+        &:hover {
+            border-color: color.change(v.$color-dark, $alpha: 0.28);
+            background: color.change(v.$color-white, $alpha: 0.9);
+            transform: translateY(-0.12rem);
+        }
+
+        &:focus-visible {
+            outline: 3px solid color.change(v.$color-dark, $alpha: 0.22);
+            outline-offset: 3px;
+        }
+    }
+
+    &_indicador_externo {
+        width: 0.65rem !important;
+        height: 0.65rem !important;
+        margin-left: 0.1rem;
+        opacity: 0.55;
     }
 
     &_grid {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+        grid-template-columns: 1fr;
         gap: 1rem;
     }
 
     &_card {
-        padding: 1.5rem;
-        border: 1px solid v.$color-border;
-        border-radius: v.$radius-medium;
-        background: v.$color-white;
+        position: relative;
+        display: flex;
+        min-height: 17rem;
+        flex-direction: column;
+        padding: clamp(1.35rem, 2.2vw, 1.9rem);
+        overflow: hidden;
+        border: 1px solid color.change(v.$color-dark, $alpha: 0.2);
+        border-radius: clamp(1rem, 1.5vw, 1.35rem);
+        background: color.change(v.$color-white, $alpha: 0.5);
+        box-shadow:
+            0 1px 1px color.change(v.$color-dark, $alpha: 0.025),
+            0 1.15rem 2.8rem color.change(v.$color-dark, $alpha: 0.035);
+        transition:
+            border-color 220ms ease,
+            box-shadow 220ms ease,
+            transform 220ms ease;
 
-        > p {
-            margin: 0 0 1.25rem;
-            color: v.$color-dark;
-            font-family: v.$font-heading;
-            font-size: 1.25rem;
-            line-height: 1.5;
+        &::after {
+            position: absolute;
+            top: -4.2rem;
+            right: -4rem;
+            width: 8rem;
+            height: 8rem;
+            border: 1px solid color.change(v.$color-dark, $alpha: 0.08);
+            border-radius: 50%;
+            content: "";
+            pointer-events: none;
+        }
+
+        &:hover {
+            border-color: color.change(v.$color-dark, $alpha: 0.38);
+            box-shadow:
+                0 2px 3px color.change(v.$color-dark, $alpha: 0.035),
+                0 1.5rem 3.5rem color.change(v.$color-dark, $alpha: 0.08);
+            transform: translateY(-0.3rem);
+        }
+
+        &:first-child {
+            min-height: clamp(20rem, 28vw, 25rem);
+            border-color: transparent;
+            background:
+                radial-gradient(
+                    circle at 88% 8%,
+                    color.change(v.$color-white, $alpha: 0.09),
+                    transparent 14rem
+                ),
+                v.$color-dark;
+            box-shadow: 0 1.7rem 4rem color.change(v.$color-dark, $alpha: 0.18);
+
+            &::after {
+                border-color: color.change(v.$color-white, $alpha: 0.1);
+            }
+
+            .testimonios_comillas {
+                color: color.change(v.$color-white, $alpha: 0.72);
+            }
+
+            .testimonios_comentario p,
+            .testimonios_identidad strong {
+                color: v.$color-white;
+            }
+
+            .testimonios_linea {
+                background: color.change(v.$color-white, $alpha: 0.52);
+            }
+
+            .testimonios_autor {
+                border-color: color.change(v.$color-white, $alpha: 0.14);
+            }
+
+            .testimonios_verificado,
+            .testimonios_zona {
+                color: color.change(v.$color-white, $alpha: 0.67);
+            }
+
+            .testimonios_verificado svg,
+            .testimonios_zona svg {
+                color: color.change(v.$color-white, $alpha: 0.78);
+            }
+
+            .testimonios_foto_contenedor {
+                border-color: color.change(v.$color-white, $alpha: 0.28);
+                background: color.change(v.$color-white, $alpha: 0.1);
+            }
+
+            .testimonios_servicio {
+                border-color: color.change(v.$color-white, $alpha: 0.16);
+                background: color.change(v.$color-white, $alpha: 0.08);
+                color: color.change(v.$color-white, $alpha: 0.82);
+            }
         }
     }
 
-    &_datos {
+    &_hoja_card {
+        position: absolute;
+        right: clamp(1rem, 4vw, 3rem);
+        bottom: clamp(1rem, 3vw, 2.25rem);
+        width: clamp(7rem, 16vw, 13rem);
+        height: auto;
+        color: color.change(v.$color-white, $alpha: 0.075);
+        pointer-events: none;
+        transform: rotate(-24deg);
+    }
+
+    &_card_header {
+        position: relative;
+        z-index: 1;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 1rem;
+        margin-bottom: clamp(1.4rem, 2.5vw, 2.2rem);
+    }
+
+    &_comillas {
+        width: clamp(1.6rem, 2.3vw, 2.1rem);
+        height: auto;
+        color: color.change(v.$color-dark, $alpha: 0.54);
+    }
+
+    &_servicio {
+        display: inline-flex;
+        max-width: 72%;
+        align-items: center;
+        gap: 0.4rem;
+        padding: 0.45rem 0.7rem;
+        border: 1px solid color.change(v.$color-dark, $alpha: 0.12);
+        border-radius: 999px;
+        background: color.change(v.$color-dark, $alpha: 0.04);
+        color: color.change(v.$color-dark, $alpha: 0.72);
+        font-size: 0.72rem;
+        font-weight: 750;
+        line-height: 1.2;
+
+        svg {
+            width: 0.72rem;
+            height: 0.72rem;
+            flex: 0 0 auto;
+        }
+    }
+
+    &_comentario {
+        position: relative;
+        z-index: 1;
+        margin: 0;
+
+        p {
+            max-width: 48rem;
+            margin: 0;
+            color: v.$color-dark;
+            font-family: v.$font-heading;
+            font-size: clamp(1.23rem, 1.8vw, 1.65rem);
+            font-weight: 500;
+            letter-spacing: -0.02em;
+            line-height: 1.38;
+            text-wrap: pretty;
+        }
+    }
+
+    &_card:first-child &_comentario p {
+        max-width: 38rem;
+        font-size: clamp(1.5rem, 2.35vw, 2rem);
+        line-height: 1.35;
+    }
+
+    &_linea {
+        position: relative;
+        z-index: 1;
+        width: clamp(3.5rem, 7vw, 6rem);
+        height: 2px;
+        margin-top: auto;
+        margin-bottom: 1.25rem;
+        background: color.change(v.$color-dark, $alpha: 0.56);
+    }
+
+    &_autor {
+        position: relative;
+        z-index: 1;
+        display: flex;
+        align-items: center;
+        gap: 0.85rem;
+        padding-top: 0.15rem;
+    }
+
+    &_foto_contenedor {
+        display: grid;
+        width: 3.15rem;
+        height: 3.15rem;
+        flex: 0 0 auto;
+        place-items: center;
+        padding: 0.17rem;
+        border: 1px solid color.change(v.$color-dark, $alpha: 0.22);
+        border-radius: 50%;
+        background: color.change(v.$color-white, $alpha: 0.55);
+    }
+
+    &_foto {
+        width: 100%;
+        height: 100%;
+        border-radius: inherit;
+        object-fit: cover;
+    }
+
+    &_identidad {
+        display: grid;
+        min-width: 0;
+        gap: 0.35rem;
+
+        strong {
+            overflow: hidden;
+            color: v.$color-dark;
+            font-size: 0.9rem;
+            font-weight: 800;
+            line-height: 1.2;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+    }
+
+    &_detalles {
         display: flex;
         flex-wrap: wrap;
-        gap: .5rem;
-        color: v.$color-text;
-        font-size: .86rem;
+        gap: 0.35rem 0.75rem;
+    }
+
+    &_verificado,
+    &_zona {
+        display: inline-flex;
+        min-width: 0;
+        align-items: center;
+        gap: 0.35rem;
+        color: color.change(v.$color-text, $alpha: 0.78);
+        font-size: 0.66rem;
+        font-weight: 750;
+        letter-spacing: 0.11em;
+        line-height: 1.25;
+        text-transform: uppercase;
+
+        svg {
+            width: 0.72rem;
+            height: 0.72rem;
+            flex: 0 0 auto;
+            color: color.change(v.$color-dark, $alpha: 0.67);
+        }
+    }
+}
+
+@media (min-width: 48rem) {
+    .testimonios {
+        &_grid {
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+
+        &_card:first-child {
+            grid-column: 1 / -1;
+        }
+    }
+}
+
+@media (min-width: 64rem) {
+    .testimonios {
+        &_header {
+            grid-template-columns: minmax(0, 1.45fr) minmax(19rem, 0.75fr);
+        }
+
+        &_resumen {
+            justify-self: end;
+            padding-bottom: 0.35rem;
+        }
+    }
+}
+
+@media (min-width: 78rem) {
+    .testimonios {
+        &_grid {
+            grid-template-columns: repeat(12, minmax(0, 1fr));
+        }
+
+        &_card {
+            grid-column: span 4;
+
+            &:first-child {
+                grid-column: span 7;
+            }
+
+            &:nth-child(2) {
+                grid-column: span 5;
+            }
+
+            &:nth-child(6) {
+                grid-column: 2 / span 5;
+            }
+
+            &:nth-child(7) {
+                grid-column: 7 / span 5;
+            }
+        }
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .testimonios_card,
+    .testimonios_indicador_google {
+        transition: none;
+    }
+
+    .testimonios_card:hover,
+    .testimonios_indicador_google:hover {
+        transform: none;
     }
 }

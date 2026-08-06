@@ -13,7 +13,7 @@ export default function Servicios() {
             texto: "Cortamos y emparejamos el pasto para que tu jardín, patio o frente se vea limpio, prolijo y cuidado.",
             consulta: "corte de pasto",
             icono: <GiHighGrass className={styles.servicios_icono} />,
-            img: "/img/jardinero_cortando.webp",
+            img: "/img/trabajos/herramientas_1.jpg",
         },
         {
             nombre: "Poda de árboles y arbustos",

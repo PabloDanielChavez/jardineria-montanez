@@ -15,7 +15,7 @@ export default function Sobre() {
             <div className={styles.sobre_layout}>
                 <div className={styles.sobre_imgBox}>
                 <Image
-                    src="/img/jardinero.webp"
+                    src="/img/trabajos/nosotros.webp"
                     alt="Jardinero trabajando en el mantenimiento de un espacio verde"
                     fill
                     className={styles.sobre_img}

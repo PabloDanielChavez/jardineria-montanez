@@ -13,7 +13,7 @@ const trabajos = Array.from({ length: 26 }, (_, index) => {
 
     return {
         id,
-        src: `/img/trabajos/${id}.jpeg`,
+        src: `/img/trabajos/montañez_${id}.webp`,
         alt: `Trabajo de jardinería realizado por Jardinería Montañez, imagen ${id}`,
         titulo: `Trabajo de jardinería ${id}`,
         descripcion: "Registro de un trabajo real realizado por Jardinería Montañez.",
