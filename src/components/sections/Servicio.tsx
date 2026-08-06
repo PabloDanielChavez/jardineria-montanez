@@ -5,6 +5,7 @@ import { GiBroom, GiGardeningShears, GiHighGrass, GiTreeGrowth, FaWhatsapp } fro
 import Image from "next/image";
 import Link from "next/link";
 import { crearMensajeServicio, numeroUno } from "../utils/variables";
+import { FaLeaf } from "react-icons/fa";
 
 export default function Servicios() {
     const servicios = [
@@ -47,13 +48,18 @@ export default function Servicios() {
 
     return (
         <section id="servicios" className={styles.servicios}>
-            <div className={styles.servicios_presentacion}>
-                <h2 className={styles.servicios_titulo}>Servicios de jardinería y mantenimiento</h2>
-                <p className={styles.servicios_subtitulo}>
-                    Corte de pasto, poda, desmalezado, limpieza de terrenos y recuperación de espacios verdes para casas, quintas, comercios y patios.
-                </p>
-            </div>
             <div className={styles.servicios_layout}>
+                <div className={styles.servicios_presentacion}>
+                    <div className={styles.servicios_ornamento} aria-hidden="true">
+                        <FaLeaf />
+                        <span />
+                        <FaLeaf />
+                    </div>
+                    <h2 className={styles.servicios_titulo}>Servicios de jardinería y mantenimiento</h2>
+                    <p className={styles.servicios_subtitulo}>
+                        Corte de pasto, poda, desmalezado, limpieza de terrenos y recuperación de espacios verdes para casas, quintas, comercios y patios.
+                    </p>
+                </div>
                 <div className={styles.servicios_container_principal}>
                     {servicios.map((item, index) => (
                         <article key={index} className={styles.servicios_item}>

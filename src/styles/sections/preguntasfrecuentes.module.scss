@@ -3,7 +3,7 @@
 
 .preguntas {
     padding: v.$spacing-section clamp(1.25rem, 4vw, 2.5rem);
-    background: v.$color-crema;
+    background-color: #fff;
 
     &_container {
         display: grid;
@@ -33,6 +33,11 @@
             letter-spacing: .1em;
             text-transform: uppercase;
 
+            svg {
+                color: v.$color-oro;
+                font-size: 1.35rem;
+            }
+
             &::before {
                 content: "";
                 width: 32px;
@@ -61,16 +66,34 @@
     }
 
     &_lista {
-        border-top: 1px solid v.$color-border;
+        display: flex;
+        flex-direction: column;
+        gap: .7rem;
     }
 
     &_item {
-        border-bottom: 1px solid v.$color-border;
+        overflow: hidden;
+        border: 1px solid rgba(15, 75, 58, .16);
+        border-radius: 1.2rem;
+        background: rgba(255, 253, 248, .82);
+        box-shadow: 0 10px 24px rgba(23, 55, 45, .05);
+        transition: border-color .2s ease, background-color .2s ease, box-shadow .2s ease;
+
+        &:hover {
+            border-color: rgba(15, 75, 58, .35);
+            box-shadow: 0 14px 30px rgba(23, 55, 45, .08);
+        }
+
+        &[open] {
+            border-color: rgba(15, 75, 58, .45);
+            background: v.$color-white;
+            box-shadow: 0 16px 34px rgba(23, 55, 45, .1);
+        }
 
         summary {
             display: flex;
-            min-height: 74px;
-            padding: 1.15rem 0;
+            min-height: 78px;
+            padding: .85rem 1.15rem;
             align-items: center;
             justify-content: space-between;
             gap: 1.5rem;
@@ -100,6 +123,11 @@
                 font-size: 1.25rem;
                 font-weight: 400;
             }
+
+            &:focus-visible {
+                outline: 2px solid v.$color-oro;
+                outline-offset: -3px;
+            }
         }
 
         &[open] summary::after {
@@ -111,23 +139,76 @@
         p {
             max-width: 720px;
             margin: 0;
-            padding: 0 3.5rem 1.5rem 0;
+            padding: 0 4rem 1.5rem 5.1rem;
             color: v.$color-text;
             font-size: 1rem;
             line-height: 1.7;
         }
     }
+
+    &_summary_contenido {
+        display: flex;
+        min-width: 0;
+        align-items: center;
+        gap: 1rem;
+        flex: 1;
+    }
+
+    &_icono {
+        display: grid;
+        width: 3.25rem;
+        height: 3.25rem;
+        flex: 0 0 3.25rem;
+        place-items: center;
+        border: 1px solid rgba(15, 75, 58, .16);
+        border-radius: 50%;
+        background: rgba(242, 239, 229, .8);
+        color: v.$color-bosque;
+        font-size: 1.55rem;
+    }
+
+    &_pregunta {
+        min-width: 0;
+    }
 }
 
 @media (max-width: 600px) {
     .preguntas {
+        &_container {
+            gap: 2rem;
+        }
+
+        &_header {
+            h2 {
+                font-size: clamp(2.55rem, 13vw, 3.4rem);
+            }
+        }
+
+        &_lista {
+            gap: .55rem;
+        }
+
         &_item summary {
             min-height: 68px;
             gap: 1rem;
+            padding: .7rem .8rem;
+            font-size: clamp(1rem, 4.8vw, 1.2rem);
+        }
+
+        &_summary_contenido {
+            gap: .7rem;
+        }
+
+        &_icono {
+            width: 2.65rem;
+            height: 2.65rem;
+            flex-basis: 2.65rem;
+            font-size: 1.25rem;
         }
 
         &_item p {
-            padding-right: 0;
+            padding: 0 1rem 1.25rem 1rem;
+            font-size: .95rem;
         }
     }
 }

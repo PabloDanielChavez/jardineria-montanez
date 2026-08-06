@@ -50,80 +50,194 @@
     }
 
     &_contenido {
+        position: relative;
         max-width: 600px;
+        max-height: 80svh;
+        padding: clamp(1.5rem, 3vw, 3rem);
+        border: 1px solid rgba(194, 169, 99, .62);
+        border-radius: clamp(1.5rem, 3vw, 2.5rem);
+        background:
+            linear-gradient(145deg, rgba(8, 47, 39, .72), rgba(15, 75, 58, .2)),
+            rgba(8, 47, 39, .72);
         color: rgba(255, 253, 248, .88);
         font-size: 1rem;
         line-height: 1.7;
+        overflow: hidden;
+        box-shadow: inset 0 0 0 1px rgba(255, 253, 248, .05), 0 20px 50px rgba(0, 0, 0, .12);
+
+        &::before {
+            content: "";
+            position: absolute;
+            inset: .5rem;
+            border: 1px solid rgba(194, 169, 99, .18);
+            border-radius: calc(clamp(1.5rem, 3vw, 2.5rem) - .5rem);
+            pointer-events: none;
+        }
+    }
+
+    &_intro {
+        position: relative;
+        display: grid;
+        grid-template-columns: clamp(3.5rem, 8vw, 5.5rem) minmax(0, 1fr);
+        gap: clamp(.75rem, 2vw, 1.5rem);
+        align-items: start;
     }
 
     &_parrafo {
-        margin-bottom: 1.5rem;
+        margin: 0;
         color: rgba(255, 253, 248, .9);
-        font-size: clamp(1.05rem, 1.6vw, 1.2rem);
+        font-family: v.$font-heading;
+        font-size: clamp(1.15rem, 1.8vw, 1.45rem);
         line-height: 1.7;
     }
 
     .dropcap {
-        float: left;
-        padding: .18rem .25rem 0 0;
-        color: v.$color-primary;
+        position: relative;
+        display: block;
+        color: v.$color-oro-tres;
         font-family: v.$font-heading;
-        font-size: 4.6rem;
-        line-height: .72;
+        font-size: clamp(4.5rem, 8vw, 6.5rem);
+        line-height: .78;
+        text-align: center;
     }
 
     &_destacado {
-        color: v.$color-white;
+        color: v.$color-oro-tres;
         font-weight: 700;
     }
 
+    &_divisor {
+        display: grid;
+        grid-template-columns: 1fr auto 1fr;
+        gap: 1rem;
+        margin: clamp(1.5rem, 3vw, 2.25rem) 0;
+        align-items: center;
+        color: v.$color-oro-tres;
+
+        &::before,
+        &::after {
+            content: "";
+            height: 1px;
+            background: rgba(194, 169, 99, .42);
+        }
+
+        span {
+            display: grid;
+            width: 2rem;
+            height: 2rem;
+            place-items: center;
+            font-size: 1.35rem;
+        }
+    }
+
     &_lista {
-        margin: 0 0 1.5rem;
-        padding: 0;
-        border-top: 1px solid rgba(255, 255, 255, .22);
+        position: relative;
+        margin: 0;
+        padding: 0 1.25rem;
+        border: 1px solid rgba(194, 169, 99, .48);
+        border-radius: 1.75rem;
+        background: rgba(8, 47, 39, .3);
+        overflow: hidden;
         list-style: none;
 
         li {
-            position: relative;
-            padding: .9rem 0 .9rem 1.4rem;
-            border-bottom: 1px solid rgba(255, 255, 255, .22);
+            display: grid;
+            grid-template-columns: 3.75rem minmax(0, 1fr);
+            gap: 1.25rem;
+            min-height: 6rem;
+            padding: .9rem 0;
+            align-items: center;
+            border-bottom: 1px solid rgba(194, 169, 99, .28);
             color: rgba(255, 253, 248, .9);
-            font-size: .96rem;
+            font-family: v.$font-heading;
+            font-size: clamp(1.05rem, 1.35vw, 1.25rem);
+            line-height: 1.4;
 
-            &::before {
-                content: "↗";
-                position: absolute;
-                top: .9rem;
-                left: 0;
-                color: v.$color-primary;
+            &:last-child {
+                border-bottom: 0;
             }
         }
     }
 
+    &_lista_icono {
+        display: grid;
+        width: 3.65rem;
+        height: 3.65rem;
+        place-items: center;
+        border: 1px solid v.$color-oro-tres;
+        border-radius: 50%;
+        color: v.$color-oro-tres;
+        font-size: 1.75rem;
+    }
+
+    &_lista_texto {
+        strong {
+            color: v.$color-white;
+            font-weight: 700;
+        }
+    }
+
+    &_nota_box {
+        display: grid;
+        grid-template-columns: 3.25rem minmax(0, 1fr);
+        gap: 1rem;
+        margin: clamp(1.5rem, 3vw, 2.25rem) 0 1.5rem;
+        align-items: center;
+    }
+
+    &_nota_icono {
+        display: grid;
+        width: 3.25rem;
+        height: 3.25rem;
+        place-items: center;
+        border: 1px solid v.$color-oro-tres;
+        border-radius: 50%;
+        color: v.$color-oro-tres;
+        font-size: 1.6rem;
+    }
+
     &_nota {
-        margin: 0 0 1.5rem;
-        color: rgba(255, 253, 248, .72);
-        font-size: .92rem;
+        margin: 0;
+        color: rgba(255, 253, 248, .9);
+        font-family: v.$font-heading;
+        font-size: clamp(1rem, 1.35vw, 1.2rem);
+        line-height: 1.55;
+
+        strong {
+            color: v.$color-oro-tres;
+            font-weight: 700;
+        }
     }
 
     &_btn {
         display: inline-flex;
-        min-height: 50px;
-        padding: .8rem 1.3rem;
+        width: min(100%, 34rem);
+        min-height: 4.25rem;
+        margin: 0 auto;
+        padding: .8rem 1.5rem;
         align-items: center;
-        border: 1px solid v.$color-white;
+        justify-content: center;
+        gap: .8rem;
+        border: 1px solid v.$color-oro-tres;
         border-radius: 999px;
-        background: v.$color-white;
-        color: v.$color-bosque;
-        font-size: .92rem;
+        background: v.$color-crema;
+        color: v.$color-dark;
+        font-size: clamp(1rem, 1.4vw, 1.2rem);
         font-weight: 700;
         text-decoration: none;
-        transition: background-color .2s ease, color .2s ease, transform .2s ease;
+        box-shadow: 0 0 0 3px rgba(194, 169, 99, .12), 0 0 24px rgba(194, 169, 99, .2);
+        transition: background-color .2s ease, color .2s ease, transform .2s ease, box-shadow .2s ease;
+
+        svg {
+            color: v.$color-bosque;
+            font-size: 1.8rem;
+        }
 
         &:hover {
-            background: transparent;
-            color: v.$color-white;
+            background: v.$color-white;
+            color: v.$color-bosque;
             transform: translateY(-2px);
+            box-shadow: 0 0 0 4px rgba(194, 169, 99, .18), 0 0 30px rgba(194, 169, 99, .28);
         }
     }
 }
@@ -142,6 +256,45 @@
 
 @media (max-width: 600px) {
     .sobre {
+        &_contenido {
+            padding: 1.25rem;
+            border-radius: 1.35rem;
+        }
+
+        &_divisor {
+            gap: .65rem;
+            margin: 1.5rem 0;
+        }
+
+        &_lista {
+            padding: 0 .85rem;
+            border-radius: 1.25rem;
+
+            li {
+                grid-template-columns: 3rem minmax(0, 1fr);
+                gap: .8rem;
+                min-height: 5.5rem;
+                font-size: 1rem;
+            }
+        }
+
+        &_lista_icono {
+            width: 3rem;
+            height: 3rem;
+            font-size: 1.45rem;
+        }
+
+        &_nota_box {
+            grid-template-columns: 2.75rem minmax(0, 1fr);
+            gap: .75rem;
+        }
+
+        &_nota_icono {
+            width: 2.75rem;
+            height: 2.75rem;
+            font-size: 1.35rem;
+        }
+
         &_imgBox {
             min-height: 340px;
             border-radius: v.$radius-medium;
@@ -150,6 +303,84 @@
         &_btn {
             width: 100%;
             justify-content: center;
+        }
+    }
+}
+
+@media (max-height: 1000px) {
+    .sobre {
+        &_contenido {
+            padding: clamp(.85rem, 2.2vh, 1.5rem) clamp(1rem, 2.5vw, 1.5rem);
+        }
+
+        &_intro {
+            gap: .7rem;
+        }
+
+        &_parrafo {
+            font-size: clamp(.95rem, 1.4vw, 1.15rem);
+            line-height: 1.35;
+        }
+
+        .dropcap {
+            font-size: clamp(3.5rem, 6vw, 5rem);
+        }
+
+        &_divisor {
+            gap: .65rem;
+            margin: .65rem 0;
+
+            span {
+                width: 1.75rem;
+                height: 1.75rem;
+                font-size: 1.1rem;
+            }
+        }
+
+        &_lista {
+            padding: 0 .75rem;
+
+            li {
+                grid-template-columns: 2.8rem minmax(0, 1fr);
+                gap: .75rem;
+                min-height: 3.35rem;
+                padding: .5rem 0;
+                font-size: clamp(.9rem, 1.15vw, 1.05rem);
+                line-height: 1.25;
+            }
+        }
+
+        &_lista_icono {
+            width: 2.7rem;
+            height: 2.7rem;
+            font-size: 1.3rem;
+        }
+
+        &_nota_box {
+            grid-template-columns: 2.5rem minmax(0, 1fr);
+            gap: .7rem;
+            margin: .8rem 0;
+        }
+
+        &_nota_icono {
+            width: 2.5rem;
+            height: 2.5rem;
+            font-size: 1.2rem;
+        }
+
+        &_nota {
+            font-size: clamp(.88rem, 1.1vw, 1rem);
+            line-height: 1.35;
+        }
+
+        &_btn {
+            min-height: 3.25rem;
+            padding: .55rem 1rem;
+            font-size: clamp(.9rem, 1.1vw, 1rem);
+
+            svg {
+                font-size: 1.5rem;
+            }
         }
     }
 }

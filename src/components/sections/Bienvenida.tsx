@@ -1,14 +1,15 @@
 "use client";
 
 import Image from "next/image";
-import styles from "@/styles/sections/bienvenida.module.scss";
 import Link from "next/link";
+import styles from "@/styles/sections/bienvenida.module.scss";
+import { FaArrowDown, FaWhatsapp } from "@/components/utils/Iconos";
 import { mensajePresupuesto, numeroUno } from "../utils/variables";
-import { FaWhatsapp, FaArrowDown } from "@/components/utils/Iconos";
 
 export default function Bienvenida() {
     const scrollToSection = (targetId: string) => {
         const element = document.getElementById(targetId);
+
         if (element) {
             element.scrollIntoView({ behavior: "smooth", block: "start" });
         }
@@ -16,7 +17,25 @@ export default function Bienvenida() {
 
     return (
         <section id="inicio" className={styles.bienvenida}>
+            <div className={styles.bienvenida_decoracion} aria-hidden="true">
+                <span />
+                <span />
+                <span />
+            </div>
+
             <div className={styles.bienvenida_layout}>
+                <div className={styles.bienvenida_imagen}>
+                    <Image
+                        src="/img/trabajos/montañez_1.webp"
+                        alt="Trabajo de jardinería en un espacio verde"
+                        fill
+                        priority
+                        className={styles.backgroundImage}
+                        sizes="(min-width: 1200px) 62vw, (min-width: 901px) 58vw, 100vw"
+                    />
+                    <span className={styles.bienvenida_imagen_marco} aria-hidden="true" />
+                </div>
+
                 <div className={styles.bienvenida_header_box_informacion}>
                     <span className={styles.bienvenida_header_span_tag}>
                         Jardinería en Buenos Aires
@@ -47,11 +66,12 @@ export default function Bienvenida() {
                         </Link>
 
                         <button
+                            type="button"
                             onClick={() => scrollToSection("trabajos")}
                             className={`${styles.bienvenida_header_btn} ${styles.bienvenida_header_btn_alt}`}
                         >
                             Ver resultados
-                            <FaArrowDown className={styles.bienvenida_icono} />
+                            <FaArrowDown className={styles.bienvenida_icono_secun} />
                         </button>
                     </div>
 
@@ -59,21 +79,6 @@ export default function Bienvenida() {
                         Mandanos una foto y tu zona. Te orientamos sin compromiso.
                     </p>
                 </div>
-
-                <div className={styles.bienvenida_imagen}>
-                    <Image
-                        src="/img/trabajos/montañez_3.webp"
-                        alt="Trabajo de jardinería en un espacio verde"
-                        fill
-                        priority
-                        className={styles.backgroundImage}
-                        sizes="(min-width: 901px) 54vw, 100vw"
-                    />
-                </div>
-            </div>
-
-            <div className={styles.scrollIndicator}>
-                <span />
             </div>
         </section>
     );

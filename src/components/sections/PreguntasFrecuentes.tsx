@@ -1,4 +1,7 @@
 import styles from "@/styles/sections/preguntasfrecuentes.module.scss";
+import { GiGardeningShears, GiHighGrass } from "react-icons/gi";
+import { MdDeleteSweep, MdEventAvailable, MdLocationOn, MdPhotoCamera, MdPriceCheck } from "react-icons/md";
+import { PiPlantFill } from "react-icons/pi";
 
 export const preguntasFrecuentes = [
     {
@@ -38,24 +41,48 @@ export const preguntasFrecuentes = [
     },
 ] as const;
 
+const iconosPreguntas = [
+    MdPhotoCamera,
+    GiGardeningShears,
+    MdEventAvailable,
+    GiHighGrass,
+    MdLocationOn,
+    MdPriceCheck,
+    MdDeleteSweep,
+];
+
 export default function PreguntasFrecuentes() {
     return (
         <section id="preguntas" className={styles.preguntas}>
             <div className={styles.preguntas_container}>
                 <div className={styles.preguntas_header}>
-                    <span>Antes de escribirnos</span>
+                    <span>
+                        <PiPlantFill aria-hidden="true" />
+                        Antes de escribirnos
+                    </span>
                     <h2>Preguntas frecuentes</h2>
                     <p>
                         Respuestas simples para saber cómo pedir presupuesto, qué datos enviar y qué servicios se pueden coordinar.
                     </p>
                 </div>
                 <div className={styles.preguntas_lista}>
-                    {preguntasFrecuentes.map((item) => (
+                    {preguntasFrecuentes.map((item, index) => {
+                        const IconoPregunta = iconosPreguntas[index];
+
+                        return (
                         <details key={item.pregunta} className={styles.preguntas_item}>
-                            <summary>{item.pregunta}</summary>
+                            <summary>
+                                <span className={styles.preguntas_summary_contenido}>
+                                    <span className={styles.preguntas_icono} aria-hidden="true">
+                                        <IconoPregunta />
+                                    </span>
+                                    <span className={styles.preguntas_pregunta}>{item.pregunta}</span>
+                                </span>
+                            </summary>
                             <p>{item.respuesta}</p>
                         </details>
-                    ))}
+                        );
+                    })}
                 </div>
             </div>
         </section>

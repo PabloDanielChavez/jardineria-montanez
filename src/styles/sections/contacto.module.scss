@@ -2,73 +2,256 @@
 @use '../base/mixins.module.scss' as m;
 
 .contacto {
+    position: relative;
+    overflow: hidden;
     padding: clamp(4rem, 7vw, 6.5rem) clamp(1.25rem, 4vw, 2.5rem);
-    background: v.$color-primary;
+    background-color: #fff;
 
     &_container {
-        display: grid;
-        max-width: v.$container;
+        max-width: calc(v.$container + 2rem);
         margin: 0 auto;
+    }
+
+    &_panel {
+        position: relative;
+        overflow: hidden;
+        border: 1px solid rgb(55 88 69 / 0.12);
+        border-radius: clamp(1.5rem, 2vw, 2rem);
+        background-color: #f7f7f4;
+        box-shadow:
+            0 1.2rem 3rem rgb(18 42 31 / 0.08),
+            inset 0 1px 0 rgb(255 255 255 / 0.75);
+    }
+
+    &_contenido {
+        position: relative;
+        z-index: 2;
+        display: grid;
         gap: 2rem;
+        padding: clamp(2rem, 4vw, 3.25rem);
 
         @include m.tablet {
-            grid-template-columns: minmax(0, 1fr) auto;
-            align-items: end;
+            grid-template-columns: minmax(0, 1.45fr) auto minmax(20rem, 0.95fr);
+            align-items: center;
+            gap: clamp(1.5rem, 2.5vw, 3rem);
         }
     }
 
+    &_texto {
+        max-width: 52rem;
+    }
+
     &_titulo {
-        max-width: 850px;
-        margin: 0 0 1.2rem;
+        max-width: 13ch;
+        margin: 0 0 1rem;
         color: v.$color-dark;
         font-family: v.$font-heading;
-        font-size: clamp(3rem, 5.4vw, 4.0rem);
+        font-size: clamp(2.45rem, 4.6vw, 4.2rem);
         font-weight: 500;
         letter-spacing: -.055em;
-        line-height: .98;
+        line-height: 0.96;
+        text-wrap: balance;
     }
 
     &_subtitulo {
-        max-width: 700px;
+        max-width: 46rem;
         margin: 0;
         color: v.$color-text;
-        font-size: clamp(1rem, 1.5vw, 1.15rem);
+        font-size: clamp(1rem, 1.45vw, 1.18rem);
         line-height: 1.7;
+        text-wrap: pretty;
     }
 
     &_microcopy {
-        margin: 1rem 0 0;
+        display: inline-flex;
+        align-items: center;
+        gap: .75rem;
+        margin: 1.55rem 0 0;
         color: v.$color-bosque;
-        font-size: .9rem;
-        font-weight: 700;
+        font-size: clamp(.98rem, 1.2vw, 1.05rem);
+        font-weight: 500;
+        line-height: 1.5;
+
+        strong {
+            font-weight: 800;
+        }
+    }
+
+    &_microcopy_icono,
+    &_badge_icono {
+        display: inline-grid;
+        width: 1.7rem;
+        height: 1.7rem;
+        flex-shrink: 0;
+        place-items: center;
+        border-radius: 50%;
+        background: rgb(106 132 92 / 0.12);
+        color: #6b8a5a;
+        font-size: .95rem;
+    }
+
+    &_divisor {
+        display: none;
+
+        @include m.tablet {
+            display: block;
+            width: 1px;
+            min-height: 15rem;
+            background: linear-gradient(
+                180deg,
+                rgb(55 88 69 / 0),
+                rgb(55 88 69 / 0.18) 18%,
+                rgb(55 88 69 / 0.18) 82%,
+                rgb(55 88 69 / 0)
+            );
+        }
+    }
+
+    &_acciones {
+        display: grid;
+        justify-items: start;
+        gap: 1.05rem;
+
+        @include m.tablet {
+            justify-items: center;
+        }
     }
 
     &_boton {
         display: inline-flex;
-        min-height: 54px;
-        padding: .9rem 1.4rem;
+        min-height: 4.85rem;
+        padding: 1rem 2rem;
         align-items: center;
         justify-content: center;
-        gap: .65rem;
-        border: 1px solid v.$color-bosque;
+        gap: .9rem;
+        border: 1px solid rgb(16 83 60 / 0.35);
         border-radius: 999px;
-        background: v.$color-bosque;
+        background: linear-gradient(135deg, v.$color-bosque 0%, #0d6a4f 100%);
+        box-shadow: 0 1rem 2rem rgb(13 80 59 / 0.18);
         color: v.$color-white;
-        font-size: .95rem;
-        font-weight: 700;
+        font-size: clamp(1rem, 1.2vw, 1.15rem);
+        font-weight: 800;
         text-decoration: none;
         white-space: nowrap;
-        transition: background-color .2s ease, transform .2s ease;
+        transition:
+            transform .22s ease,
+            box-shadow .22s ease,
+            filter .22s ease;
+
+        svg {
+            font-size: 1.6rem;
+            flex-shrink: 0;
+        }
 
         &:hover {
-            background: v.$color-negro-fondo;
+            box-shadow: 0 1.35rem 2.25rem rgb(13 80 59 / 0.22);
+            filter: saturate(1.04);
             transform: translateY(-2px);
         }
+    }
+
+    &_badge {
+        display: inline-flex;
+        align-items: center;
+        gap: .7rem;
+        margin: 0;
+        padding: .85rem 1.2rem;
+        border-radius: 999px;
+        background: rgb(119 149 104 / 0.10);
+        color: #5d7760;
+        font-size: clamp(.94rem, 1vw, 1rem);
+        font-weight: 600;
+        line-height: 1.4;
+        text-align: center;
+    }
+
+    &_svg_izquierda,
+    &_svg_derecha {
+        position: absolute;
+        z-index: 1;
+        pointer-events: none;
+        user-select: none;
+    }
+
+    &_svg_izquierda {
+        bottom: 0;
+        left: 0;
+        width: clamp(10rem, 14vw, 14rem);
+        height: auto;
+        opacity: .10;
+    }
+
+    &_svg_derecha {
+        top: 6;
+        right: -30;
+        width: clamp(9rem, 13vw, 13rem);
+        height: auto;
+        opacity: .08;
     }
 }
 
 @media (max-width: 973px) {
-    .contacto_boton {
-        width: 100%;
+    .contacto {
+        &_panel {
+            border-radius: 1.4rem;
+        }
+
+        &_contenido {
+            gap: 1.5rem;
+            padding: 1.75rem;
+        }
+
+        &_titulo {
+            max-width: 14ch;
+        }
+
+        &_acciones {
+            justify-items: stretch;
+        }
+
+        &_boton,
+        &_badge {
+            width: 100%;
+        }
+
+        &_boton {
+            min-height: 4.2rem;
+        }
+
+        &_badge {
+            justify-content: center;
+        }
+
+        &_svg_izquierda {
+            width: 9.75rem;
+            opacity: .58;
+        }
+
+        &_svg_derecha {
+            width: 8.5rem;
+            opacity: .55;
+        }
+    }
+}
+
+@media (max-width: 640px) {
+    .contacto {
+        &_contenido {
+            padding: 1.4rem;
+        }
+
+        &_titulo {
+            font-size: clamp(2.05rem, 11vw, 3rem);
+        }
+
+        &_subtitulo {
+            font-size: 1rem;
+            line-height: 1.65;
+        }
+
+        &_microcopy {
+            align-items: flex-start;
+            font-size: .95rem;
+        }
     }
 }
