@@ -4,7 +4,7 @@ import styles from "@/styles/sections/vision.module.scss";
 import Image from "next/image";
 import Link from "next/link";
 import { FaWhatsapp } from "@/components/utils/Iconos";
-import { crearMensajeServicio, numeroUno } from "../utils/variables";
+import { crearMensajeServicio, numeroDos } from "../utils/variables";
 
 export default function Vision() {
     return (
@@ -37,7 +37,7 @@ export default function Vision() {
                     </ul>
 
                     <Link
-                    href={`https://wa.me/${numeroUno}?text=${crearMensajeServicio("recuperación de un jardín, patio o terreno")}`}
+                    href={`https://wa.me/${numeroDos}?text=${crearMensajeServicio("recuperación de un jardín, patio o terreno")}`}
                     className={styles.vision_cta}
                     target="_blank"
                     rel="noopener noreferrer"

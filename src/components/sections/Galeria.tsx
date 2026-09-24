@@ -15,7 +15,7 @@ import {
 } from "react-icons/fa6";
 import { FaWhatsapp } from "@/components/utils/Iconos";
 import styles from "@/styles/sections/galeria.module.scss";
-import { crearMensajeServicio, numeroUno } from "../utils/variables";
+import { crearMensajeServicio, numeroDos } from "../utils/variables";
 
 type Trabajo = {
     id: number;
@@ -187,7 +187,7 @@ export default function Galeria() {
                     </button>
                 )}
                 <Link
-                    href={`https://wa.me/${numeroUno}?text=${crearMensajeServicio("un trabajo de jardinería similar a los de la web")}`}
+                    href={`https://wa.me/${numeroDos}?text=${crearMensajeServicio("un trabajo de jardinería similar a los de la web")}`}
                     className={styles.galeria_cta}
                     target="_blank"
                     rel="noopener noreferrer"
@@ -361,7 +361,7 @@ export default function Galeria() {
 
                             <div className={styles.modal_acciones}>
                                 <Link
-                                    href={`https://wa.me/${numeroUno}?text=${crearMensajeServicio(`un trabajo similar a ${imagenSeleccionada.titulo}`)}`}
+                                    href={`https://wa.me/${numeroDos}?text=${crearMensajeServicio(`un trabajo similar a ${imagenSeleccionada.titulo}`)}`}
                                     className={styles.modal_cta}
                                     target="_blank"
                                     rel="noopener noreferrer"

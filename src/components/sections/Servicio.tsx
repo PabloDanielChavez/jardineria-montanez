@@ -4,7 +4,7 @@ import styles from "@/styles/sections/servicios.module.scss";
 import { GiBroom, GiGardeningShears, GiHighGrass, GiTreeGrowth, FaWhatsapp } from "@/components/utils/Iconos";
 import Image from "next/image";
 import Link from "next/link";
-import { crearMensajeServicio, numeroUno } from "../utils/variables";
+import { crearMensajeServicio, numeroDos } from "../utils/variables";
 import { FaLeaf } from "react-icons/fa";
 
 export default function Servicios() {
@@ -80,7 +80,7 @@ export default function Servicios() {
                                     <h3 className={styles.servicios_heading}>{item.nombre}</h3>
                                     <p className={styles.servicios_texto}>{item.texto}</p>
                                     <Link
-                                        href={`https://wa.me/${numeroUno}?text=${crearMensajeServicio(item.consulta)}`}
+                                        href={`https://wa.me/${numeroDos}?text=${crearMensajeServicio(item.consulta)}`}
                                         className={styles.servicios_cta}
                                         target="_blank"
                                         rel="noopener noreferrer"

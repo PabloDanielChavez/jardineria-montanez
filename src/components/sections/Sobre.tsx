@@ -3,7 +3,7 @@
 import Image from "next/image";
 import styles from "@/styles/sections/sobre.module.scss";
 import Link from "next/link";
-import { mensajePresupuesto, numeroUno } from "../utils/variables";
+import { mensajePresupuesto, numeroDos } from "../utils/variables";
 import { FaCalendarCheck, FaCamera, FaCompass, FaSeedling, FaWhatsapp } from "react-icons/fa";
 import { MdEco, MdPhotoCamera } from "react-icons/md";
 import { GiGardeningShears } from "react-icons/gi";
@@ -78,7 +78,7 @@ export default function Sobre() {
                     </div>
 
                     <Link
-                        href={`https://wa.me/${numeroUno}?text=${mensajePresupuesto}`}
+                        href={`https://wa.me/${numeroDos}?text=${mensajePresupuesto}`}
                         className={styles.sobre_btn}
                         target="_blank"
                         rel="noopener noreferrer"

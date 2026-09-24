@@ -5,7 +5,7 @@ import styles from '@/styles/sections/header.module.scss';
 import { BiBriefcase, BiEnvelope, BiHelpCircle, BiHomeAlt2, BiMenu, BiTargetLock } from "@/components/utils/Iconos";
 import Image from 'next/image';
 import Link from 'next/link';
-import { numeroUno } from '../utils/variables';
+import { numeroDos } from '../utils/variables';
 import { MdPhone } from 'react-icons/md';
 
 export default function Header() {
@@ -14,9 +14,9 @@ export default function Header() {
     const menu = [
         { id: 1, titulo: "Inicio", target: "inicio", icono: <BiHomeAlt2 size={20} /> },
         { id: 2, titulo: "Servicios", target: "servicios", icono: <BiBriefcase size={20} /> },
-        { id: 3, titulo: "Contacto", target: "contacto", icono: <BiEnvelope size={20} /> },
+        { id: 3, titulo: "Cómo trabajamos", target: "como-trabajamos", icono: <BiHelpCircle size={20} /> },
         { id: 4, titulo: "Trabajos", target: "trabajos", icono: <BiTargetLock size={20} /> },
-        { id: 5, titulo: "Cómo trabajamos", target: "como-trabajamos", icono: <BiHelpCircle size={20} /> },
+        { id: 5, titulo: "Contacto", target: "contacto", icono: <BiEnvelope size={20} /> },
         { id: 6, titulo: "Preguntas", target: "preguntas", icono: <BiHelpCircle size={20} /> },
     ];
     
@@ -78,7 +78,7 @@ export default function Header() {
                 </nav>
                 <div className={styles.header_actions}>
                     <Link
-                        href={`tel:${numeroUno}`}
+                        href={`tel:${numeroDos}`}
                         className={styles.header_cta}
                         target="_blank"
                         rel="noopener noreferrer"

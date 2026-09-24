@@ -20,7 +20,7 @@ export const crearMensajeServicio = (servicio: string) =>
     );
 
 export const mensajeEmail = encodeURIComponent(
-    "Hola Mauro,\n\n" +
+    "Hola,\n\n" +
     "Me comunico luego de visitar el sitio web de Jardinería Montañez.\n\n" +
     "Estoy interesado en conocer más sobre sus servicios de jardinería, mantenimiento de jardines y cuidado de espacios verdes.\n\n" +
     "Quedo atento a su respuesta.\n\n" +

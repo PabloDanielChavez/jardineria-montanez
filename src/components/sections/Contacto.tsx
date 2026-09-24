@@ -4,7 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { FaLeaf } from "react-icons/fa6";
 import styles from "@/styles/sections/contacto.module.scss";
-import { mensajePresupuesto, numeroUno } from "../utils/variables";
+import { mensajePresupuesto, numeroDos } from "../utils/variables";
 import { FaWhatsapp } from "../utils/Iconos";
 
 export default function Contacto() {
@@ -55,7 +55,7 @@ export default function Contacto() {
 
                         <div className={styles.contacto_acciones}>
                             <Link
-                                href={`https://wa.me/${numeroUno}?text=${mensajePresupuesto}`}
+                                href={`https://wa.me/${numeroDos}?text=${mensajePresupuesto}`}
                                 className={styles.contacto_boton}
                                 target="_blank"
                                 rel="noopener noreferrer"

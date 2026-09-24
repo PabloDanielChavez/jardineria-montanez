@@ -5,7 +5,7 @@ import Link from "next/link";
 import { MdAccessTime, MdLocationOn, MdPhone } from "react-icons/md";
 import { FaWhatsapp } from "react-icons/fa";
 import styles from "@/styles/sections/footer.module.scss";
-import { mensajeWSP, numeroDos, numeroUno } from "../utils/variables";
+import { mensajeWSP, numeroDos } from "../utils/variables";
 
 const footerMenu = [
     { nombre: "Inicio", target: "inicio" },
@@ -93,7 +93,7 @@ export default function Footer() {
                         </li>
                         <li className={styles.footer_li}>
                             <Link
-                                href={`https://wa.me/${numeroUno}?text=${mensajeWSP}`}
+                                href={`https://wa.me/${numeroDos}?text=${mensajeWSP}`}
                                 className={styles.footer_LINK}
                                 target="_blank"
                                 rel="noopener noreferrer"
@@ -121,7 +121,7 @@ export default function Footer() {
                         </li>
                     </ul>
                     <Link
-                        href={`https://wa.me/${numeroUno}?text=${mensajeWSP}`}
+                        href={`https://wa.me/${numeroDos}?text=${mensajeWSP}`}
                         className={styles.footer_whatsapp}
                         target="_blank"
                         rel="noopener noreferrer"

@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import styles from "@/styles/sections/mantenimiento.module.scss";
 import { FaWhatsapp } from "@/components/utils/Iconos";
-import { crearMensajeServicio, numeroUno } from "../utils/variables";
+import { crearMensajeServicio, numeroDos } from "../utils/variables";
 
 export default function Mantenimiento() {
     return (
@@ -60,7 +60,7 @@ export default function Mantenimiento() {
                     </div>
 
                     <Link
-                        href={`https://wa.me/${numeroUno}?text=${crearMensajeServicio("mantenimiento de jardín")}`}
+                        href={`https://wa.me/${numeroDos}?text=${crearMensajeServicio("mantenimiento de jardín")}`}
                         className={styles.mantenimiento_cta}
                         target="_blank"
                         rel="noopener noreferrer"

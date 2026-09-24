@@ -4,7 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import styles from "@/styles/sections/bienvenida.module.scss";
 import { FaArrowDown, FaWhatsapp } from "@/components/utils/Iconos";
-import { mensajePresupuesto, numeroUno } from "../utils/variables";
+import { mensajePresupuesto, numeroDos } from "../utils/variables";
 
 export default function Bienvenida() {
     const scrollToSection = (targetId: string) => {
@@ -56,7 +56,7 @@ export default function Bienvenida() {
 
                     <div className={styles.bienvenida_header_box_btn}>
                         <Link
-                            href={`https://wa.me/${numeroUno}?text=${mensajePresupuesto}`}
+                            href={`https://wa.me/${numeroDos}?text=${mensajePresupuesto}`}
                             className={styles.bienvenida_header_btn}
                             target="_blank"
                             rel="noopener noreferrer"

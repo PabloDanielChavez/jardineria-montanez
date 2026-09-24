@@ -1,12 +1,12 @@
 "use client";
 import Link from 'next/link';
-import { mensajeWSP, numeroUno } from '@/components/utils/variables';
+import { mensajeWSP, numeroDos } from '@/components/utils/variables';
 import { FaWhatsapp } from '@/components/utils/Iconos';
 
 export default function btnWSP() {
     return (
         <Link
-            href={`https://wa.me/${numeroUno}?text=${mensajeWSP}`} 
+            href={`https://wa.me/${numeroDos}?text=${mensajeWSP}`} 
             className={`whatsapp_float`} // Usa el módulo de estilos
             target="_blank" 
             rel="noopener noreferrer"
